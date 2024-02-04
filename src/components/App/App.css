@@ -1,11 +1,15 @@
 :root {
   --bg: #adf1f9;
   --header-bg: rgb(68, 210, 144);
-  --timer-bg: rgb(80, 225, 235);
+  --timer-bg: rgba(80, 225, 235);
+  --prompt-bg: rgba(80, 225, 235, 0.45);
 
   --font: #2f2f2f;
   --link: rgb(0, 117, 117);
   --link-dark: rgb(2, 175, 175);
+
+  --blue: rgb(3, 150, 255);
+  --green: rgb(9, 202, 209);
 }
 
 body {
@@ -24,6 +28,7 @@ button {
   -webkit-tap-highlight-color: transparent;
 }
 h1,
+h2,
 h3 {
   margin: 0;
 }

@@ -1,7 +1,12 @@
 import './Home.css'
+import notebook from '/notebook.png'
 const Home = () => {
   return (
-    <div className='Home'>
+    <div className='Home' style={{ 
+      backgroundImage: `url(${notebook})`,
+      backgroundPosition: 'center',
+      backgroundRepeat: 'no-repeat',
+    }}>
       <div className="prompt-choices">
         <a href="/prompts">
           <div className="cards">
