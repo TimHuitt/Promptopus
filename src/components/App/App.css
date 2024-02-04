@@ -1,7 +1,7 @@
 :root {
   --bg: #adf1f9;
   --header-bg: rgb(68, 210, 144);
-  --timer-bg: rgb(117, 170, 174);
+  --timer-bg: rgb(80, 225, 235);
 
   --font: #2f2f2f;
   --link: rgb(0, 117, 117);
@@ -13,8 +13,12 @@ body {
   background: var(--bg);
   color: var(--font);
   font-size: 16px;
+  overflow: hidden;
 }
 a {
   color: var(--font);
   text-decoration: none;
+}
+h1 {
+  margin: 0;
 }

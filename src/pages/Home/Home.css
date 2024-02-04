@@ -30,3 +30,50 @@
   grid-column: 2;
   background: rgb(9, 202, 209);
 }
+
+.prompt-settings {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+  max-width: 500px;
+  height: 30vh;
+  background-color: var(--timer-bg);
+  border-radius: 30px;
+}
+.prompt-settings form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+.prompt-settings label {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 5%;
+  width: 80%;
+  margin: 2% 0;
+}
+.prompt-settings select,
+.prompt-settings input {
+  padding: 2%;
+  border-radius: 15px;
+}
+.prompt-settings button {
+  padding: 4%;
+  margin: 8% 0;
+  background-color: rgb(15, 223, 105);
+  border: 2px solid rgb(150, 245, 150);
+  border-radius: 20px;
+  cursor: pointer;
+}
+.prompt-settings button:hover {
+  background-color: rgb(22, 245, 119);
+  border: 2px solid rgb(112, 239, 112);
+}
+.prompt-settings h1 {
+  margin: 5% 0 10% 0;
+}

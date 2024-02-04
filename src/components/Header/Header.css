@@ -1,7 +1,9 @@
 .Header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  width: 100%;
+  width: (100% - 2%);
+  height: 5vh;
   background-color: var(--header-bg);
+  padding: 0 1%;
 }
