@@ -8,8 +8,8 @@
   --link: rgb(0, 117, 117);
   --link-dark: rgb(2, 175, 175);
 
-  --blue: rgb(3, 150, 255);
-  --green: rgb(9, 202, 209);
+  --blue: rgba(3, 150, 255, 0.45);
+  --green: rgba(9, 202, 209, 0.45);
 }
 
 body {

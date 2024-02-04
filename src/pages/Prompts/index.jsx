@@ -18,10 +18,10 @@ const Prompts = () => {
     }}>
       { showPrompts ? (
         <div className="prompt-card">
-          <Card />
-          <Card />
-          <Card />
-          <Card />
+          <Card prompt={ 'Volcano' } />
+          <Card prompt={ 'Butterfly' } />
+          <Card prompt={ 'Castle' } />
+          <Card prompt={ 'Guitar' } />
         </div>
       ) : (
         <div className="prompt-settings">

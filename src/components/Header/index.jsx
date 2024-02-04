@@ -4,7 +4,7 @@ const Header = () => {
     <div className='Header'>
       <div className="title">
         <small>a Doodling</small>
-        <h1>Proptopus</h1>
+        <h1>Promptopus</h1>
       </div>
       <div className="header-links">
         <a href="/">Home</a>

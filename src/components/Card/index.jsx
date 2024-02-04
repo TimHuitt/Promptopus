@@ -1,7 +1,8 @@
 import './Card.css'
-const Card = () => {
+const Card = ({ prompt }) => {
   return (
     <div className='Card'>
+      {prompt}
     </div>
   )
 }
