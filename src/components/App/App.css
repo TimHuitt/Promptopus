@@ -1,0 +1,20 @@
+:root {
+  --bg: #adf1f9;
+  --header-bg: rgb(68, 210, 144);
+  --timer-bg: rgb(117, 170, 174);
+
+  --font: #2f2f2f;
+  --link: rgb(0, 117, 117);
+  --link-dark: rgb(2, 175, 175);
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--font);
+  font-size: 16px;
+}
+a {
+  color: var(--font);
+  text-decoration: none;
+}

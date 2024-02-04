@@ -1,0 +1,32 @@
+.Home {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100vh;
+  transform: translateY(-10%);
+}
+.prompt-choices {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10%;
+}
+.cards,
+.stories {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25vmin;
+  height: 25vmin;
+}
+.cards {
+  grid-column: 1;
+  background: rgb(3, 150, 255);
+}
+.stories {
+  grid-column: 2;
+  background: rgb(9, 202, 209);
+}
