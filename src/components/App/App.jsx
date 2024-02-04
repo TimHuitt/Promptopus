@@ -10,7 +10,6 @@ const App = () => {
     <div className='App'>
       <Header />
       <Main />
-      <Timer />
     </div>
   )
 }
