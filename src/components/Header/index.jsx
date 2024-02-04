@@ -3,7 +3,8 @@ const Header = () => {
   return (
     <div className='Header'>
       <div className="title">
-        <h1>Header</h1>
+        <small>a Doodling</small>
+        <h1>Proptopus</h1>
       </div>
       <div className="header-links">
         <a href="/">Home</a>

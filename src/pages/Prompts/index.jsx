@@ -1,8 +1,8 @@
-import './Cards.css'
+import './Prompts.css'
 
-const Cards = () => {
+const Prompts = () => {
   return (
-    <div className='Cards'>
+    <div className='Prompts'>
       <div className="prompt-settings">
         <h1>Prompt Settings</h1>
         <form id="prompts-form">
@@ -23,5 +23,5 @@ const Cards = () => {
     </div>
   )
 }
-export default Cards
+export default Prompts
 

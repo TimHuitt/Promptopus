@@ -14,13 +14,23 @@
   align-items: center;
   gap: 10%;
 }
+.prompt-choices a {
+  border-radius: 30%;
+  /* -webkit-tap-highlight-color: transparent; */
+}
+.prompt-choices a:active {
+  filter: brightness(75%)
+}
 .cards,
 .stories {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25vmin;
-  height: 25vmin;
+  width: 40vmin;
+  max-width: 300px;
+  height: 40vmin;
+  max-height: 300px;
+  border-radius: 30%;
 }
 .cards {
   grid-column: 1;
@@ -54,7 +64,7 @@
   justify-content: center;
   align-items: center;
   gap: 5%;
-  width: 80%;
+  width: 95%;
   margin: 2% 0;
 }
 .prompt-settings select,

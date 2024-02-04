@@ -1,11 +1,24 @@
 .Timer {
-  display: flex;
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
   justify-content: center;
   align-items: center;
   position: fixed;
   bottom: 0;
   left: 0;
-  width: 100%;
+  width: calc(100% - 10%);
   height: 8vh;
+  padding: 0 5%;
   background-color: var(--timer-bg);
+}
+.Timer > div {
+  display: flex;
+  justify-content: center;
+}
+.timer-settings {
+
+}
+.timer-controls img {
+  max-height: 50px;
+  max-width: 50px;
 }

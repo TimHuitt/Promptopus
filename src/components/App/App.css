@@ -18,7 +18,12 @@ body {
 a {
   color: var(--font);
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
-h1 {
+button {
+  -webkit-tap-highlight-color: transparent;
+}
+h1,
+h3 {
   margin: 0;
 }

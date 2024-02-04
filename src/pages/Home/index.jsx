@@ -3,14 +3,14 @@ const Home = () => {
   return (
     <div className='Home'>
       <div className="prompt-choices">
-        <a href="/Cards">
+        <a href="/prompts">
           <div className="cards">
-            Cards
+            <h1>Prompts</h1>
           </div>
         </a>
         <a href="/stories">
           <div className="stories">
-            Stories
+          <h1>Stories</h1>
           </div>
         </a>
       </div>
@@ -18,3 +18,4 @@ const Home = () => {
   )
 }
 export default Home
+

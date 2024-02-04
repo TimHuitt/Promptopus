@@ -2,8 +2,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  width: (100% - 2%);
-  height: 5vh;
+  width: (100% - 4%);
+  height: auto;
   background-color: var(--header-bg);
-  padding: 0 1%;
+  padding: 1% 2%;
+}
+.Header small {
+  
 }

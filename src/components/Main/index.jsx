@@ -1,6 +1,6 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from '../../pages/Home'
-import Cards from '../../pages/Cards'
+import Prompts from '../../pages/Prompts'
 import Stories from '../../pages/Stories'
 
 const Main = () => {
@@ -8,7 +8,7 @@ const Main = () => {
     <>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/cards" element={<Cards />} />
+        <Route path="/prompts" element={<Prompts />} />
         <Route path="/stories" element={<Stories />} />
       </Routes>
     </>
