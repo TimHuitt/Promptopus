@@ -80,11 +80,13 @@ const Timer: React.FC = () => {
   return (
     <div className={styles.Timer}>
       <div className={styles['timer-settings']}>
+        <div>
           <input 
             type="text" 
             value={minToggle ? minRef.current : secRef.current } 
             onChange={setTime}
           />
+        </div>
         <div className={styles['time-type']} onClick={handleType}>
           <div className={styles['type-select']}>
             { minToggle ? (

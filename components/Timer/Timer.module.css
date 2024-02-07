@@ -28,9 +28,11 @@
 .timer-controls img {
   max-height: 50px;
   max-width: 50px;
+  cursor: pointer;
 }
 .type-select {
   border: 1px solid rgb(120, 120, 120);
   border-radius: 10px;
   padding: 0 5px;
+  cursor: pointer;
 }
