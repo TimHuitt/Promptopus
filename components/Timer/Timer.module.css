@@ -14,13 +14,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  text-align: center;
   padding: 0 5%;
   gap: 10%;
 }
 .timer-settings input[type="text"] {
   text-align: center;
   width: 100%;
-  max-width: 40px;
+  max-width: 60px;
   border-radius: 15px;
   font-size: 2rem;
 }
