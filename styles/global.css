@@ -1,5 +1,5 @@
 :root {
-  --bg: #adf1f9;
+  --bg: #dbf9fc;
   --header-bg: rgb(68, 210, 144);
   --timer-bg: rgba(80, 225, 235);
   --prompt-bg: rgba(80, 225, 235, 0.45);
@@ -11,7 +11,9 @@
   --blue: rgba(3, 150, 255, 0.45);
   --green: rgba(9, 202, 209, 0.45);
 }
-
+* {
+  box-sizing: border-box;
+}
 body {
   margin: 0;
   background: var(--bg);

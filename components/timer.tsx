@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import playSvg from '/play.svg'
 import pauseSvg from '/pause.svg'
-import './Timer.css'
+import styles from './timer.module.css'
 
-const Timer = () => {
+const Timer: React.FC = () => {
   const [ play, setPlay ] = useState(true)
   const [ min, setMin ] = useState(true)
 
@@ -16,11 +16,11 @@ const Timer = () => {
   }
 
   return (
-    <div className='Timer'>
-      <div className="timer-settings">
+    <div className={styles.Timer}>
+      <div className={styles['timer-settings']}>
         <input type="text" placeholder="3"/>
-        <div className="time-type" onClick={handleType}>
-          <div className="type-select">
+        <div className={styles['time-type']} onClick={handleType}>
+          <div className={styles['type-select']}>
             { min ? (
               <h2>min</h2>
             ) : (
@@ -29,15 +29,15 @@ const Timer = () => {
           </div>
         </div>
       </div>
-      <div className="timer-controls" onClick={ handleTimer }>
+      <div className={styles['timer-controls']} onClick={ handleTimer }>
         { play ? (
-          <img src={playSvg} />
+          <img src='/images/play.svg' />
         ) : (
-          <img src={pauseSvg} />
+          <img src='/images/pause.svg' />
         )}
       </div>
-      <div className="time-remaining">
-        <div className="timer">
+      <div className={styles['time-remaining']}>
+        <div className={styles.timer}>
           <h1>3:00</h1>
           <small>remaining</small>
         </div>

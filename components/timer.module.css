@@ -17,12 +17,11 @@
   padding: 0 5%;
   gap: 10%;
 }
-.timer-settings input {
+.timer-settings input[type="text"] {
   text-align: center;
   width: 100%;
   max-width: 40px;
   border-radius: 15px;
-  padding: 0 5%;
   font-size: 2rem;
 }
 .timer-controls img {
