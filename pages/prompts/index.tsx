@@ -1,9 +1,9 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import Card from '../../components/card'
-import Timer from '../../components/timer'
-import Header from '../../components/header'
+import Card from '../../components/Card'
+import Timer from '../../components/Timer'
+import Header from '../../components/Header'
 import styles from './prompts.module.css'
 import bg from '../../public/images/notebook.png'
 

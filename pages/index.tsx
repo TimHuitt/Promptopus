@@ -3,8 +3,8 @@ import Head from 'next/head'
 import styles from '../styles/index.module.css'
 
 import bg from '../public/images/notebook.png'
-import Header from '../components/header'
-import Timer from '../components/timer'
+import Header from '../components/Header'
+import Timer from '../components/Timer'
 
 const Home: React.FC = () => {
   return (

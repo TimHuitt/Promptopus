@@ -1,8 +1,8 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
-import Timer from '../../components/timer'
-import Header from '../../components/header'
+import Timer from '../../components/Timer'
+import Header from '../../components/Header'
 import styles from './stories.module.css'
 import bg from '../../public/images/notebook.png'
 
