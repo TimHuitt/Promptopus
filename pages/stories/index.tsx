@@ -1,13 +1,14 @@
 import { useState } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
 import styles from './stories.module.css'
-import bg from '../../public/images/notebook.png'
+import bg from '../../public/images/bg.jpg'
 
 const Stories: React.FC = () => {
-  const [ showStories, setShowStories ] = useState(false)
+  const [ showStories, setShowStories ] = useState<boolean>(false)
   
   const handleSubmit = () => {
     setShowStories(true)
@@ -20,16 +21,12 @@ const Stories: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className={styles.Stories} style={{ 
-        backgroundImage: `url(${bg.src})`,
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }}>
+      <div className={styles.Stories}>
         { showStories ? (
           <div className={styles['stories-card']}>
-            <p>
-              In the heart of a dense forest, a single, glowing flower bloomed under the moon's tender gaze. A wandering fox, drawn by its light, whispered a wish into the night, and for a fleeting moment, the forest hummed with a magic unseen.
-            </p>
+            <div className={styles["stories-text"]}>
+              In the heart of a dense forest, a single, glowing flower bloomed under the moon's tender gaze. A wandering fox, drawn by its light, whispered a wish into the night, and for a fleeting moment, the forest hummed with a magic unseen. In the heart of a dense forest, a single, glowing flower bloomed under the moon's tender gaze. A wandering fox, drawn by its light, whispered a wish into the night, and for a fleeting moment, the forest hummed with a magic unseen. In the heart of a dense forest, a single, glowing flower bloomed under the moon's tender gaze. A wandering fox, drawn by its light, whispered a wish into the night, and for a fleeting moment, the forest hummed with a magic unseen.
+              </div>
           </div>
         ) : (
           <div className={styles['stories-settings']}>
@@ -48,10 +45,23 @@ const Stories: React.FC = () => {
               </label>
               <button type="button" onClick={ handleSubmit }>Generate Stories!</button>
             </form>
+
+            <div className="stories-book"> 
+            </div>
           </div>
         )}
-      </div>
-      {showStories ? <Timer /> : ''}
+        </div>
+        {showStories ? <Timer /> : ''}
+
+
+        <div className="bg-image">
+          <Image
+            src='/images/bg-stories.png'
+            width={500}
+            height={500}
+            alt=""
+          />      
+        </div>
     </>
   )
 }

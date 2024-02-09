@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+
 :root {
-  --bg: #dbf9fc;
+  --bg: rgb(174, 167, 220);
   --header-bg: rgb(68, 210, 144);
   --timer-bg: rgba(80, 225, 235);
-  --prompt-bg: rgba(80, 225, 235, 0.45);
+  --prompt-bg: transparent;
 
   --font: #2f2f2f;
   --link: rgb(0, 117, 117);
@@ -14,12 +16,22 @@
 * {
   box-sizing: border-box;
 }
+html {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 body {
+  position: relative;
+  width: 100%;
+  max-width: 700px;
   margin: 0;
-  background: var(--bg);
+  background-color: var(--bg);
   color: var(--font);
   font-size: 16px;
   overflow: hidden;
+  font-family: 'Gochi Hand', cursive;
+  letter-spacing: 1.3px;
 }
 a {
   color: var(--font);
@@ -33,4 +45,24 @@ h1,
 h2,
 h3 {
   margin: 0;
+}
+
+.bg-image {
+  position: fixed;
+  top: 5%;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  user-select: none;
+  pointer-events: none;
+  z-index: -1;
+}
+.bg-image img {
+  height: 100%;
+  width: 100%;
+  min-width: 500px;
+  max-width: 700px;
 }

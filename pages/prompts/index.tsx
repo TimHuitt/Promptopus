@@ -5,7 +5,8 @@ import Card from '../../components/Card'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
 import styles from './prompts.module.css'
-import bg from '../../public/images/notebook.png'
+
+import Image from 'next/image'
 
 const Prompts: React.FC = () => {
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
@@ -21,11 +22,15 @@ const Prompts: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <div className={styles.Prompts} style={{ 
-        backgroundImage: `url(${bg.src})`,
+
+      {/* style={{ 
+        backgroundImage: `url('images/bg.jpg')`,
+        backgroundSize: '100% 90%',
         backgroundPosition: 'center',
         backgroundRepeat: 'no-repeat',
-      }}>
+      }} */}
+
+      <div className={styles.Prompts} >
         { showPrompts ? (
           <div className={styles['prompt-card']}>
             <Card prompt={ 'Volcano' } />
@@ -45,7 +50,7 @@ const Prompts: React.FC = () => {
                   <option>4</option>
                 </select>
               </label>
-              <label htmlFor="prompt-theme">Prompt Theme:
+              <label htmlFor="prompt-theme">Theme:
                 <input type="text" placeholder="(optional)"/>
               </label>
               <button type="button" onClick={ handleSubmit }>Generate Prompts!</button>
@@ -54,8 +59,17 @@ const Prompts: React.FC = () => {
         )}
       </div>
       {showPrompts ? <Timer /> : ''}
+      <div className="bg-image">
+        <Image
+          src='/images/bg.jpg'
+          width={500}
+          height={500}
+          alt=""
+        />      
+      </div>
     </>
   )
 }
 export default Prompts
+
 

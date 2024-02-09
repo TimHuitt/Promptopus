@@ -8,8 +8,8 @@ const Timer: React.FC = () => {
   const [ minToggle, setMinToggle ] = useState<boolean>(true)
   const [ min, setMin ] = useState<number>(3)
   const [ sec, setSec ] = useState<number>(0)
-  const minRef = useRef(3)
-  const secRef = useRef(0)
+  const minRef = useRef<number>(3)
+  const secRef = useRef<number>(0)
 
   const setTime = (e: ChangeEvent<HTMLInputElement>) => {
     const value = parseInt(e.currentTarget.value)
