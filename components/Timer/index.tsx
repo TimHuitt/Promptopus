@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect, ChangeEvent } from 'react'
 import playSvg from '/play.svg'
 import pauseSvg from '/pause.svg'
-import styles from './timer.module.css'
+import styles from './Timer.module.css'
 
 const Timer: React.FC = () => {
   const [ play, setPlay ] = useState<boolean>(false)
