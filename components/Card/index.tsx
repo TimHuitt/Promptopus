@@ -7,7 +7,7 @@ interface CardPrompts {
 const Card: React.FC<CardPrompts> = ({ prompt }) => {
   return (
     <div className={styles.Card}>
-      <h1>{prompt}</h1>
+      <h1 dangerouslySetInnerHTML={{ __html: prompt }} />
     </div>
   )
 }

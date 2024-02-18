@@ -5,6 +5,7 @@
   align-items: center;
   width: 100%;
   min-height: 100vh;
+  font-size: 1.25rem;
 }
 .prompt-settings {
   display: flex;
@@ -14,6 +15,7 @@
   width: 80%;
   max-width: 500px;
   height: 30vh;
+  padding-top: 4%;
   border-radius: 30px;
 }
 .prompt-settings form {
@@ -33,14 +35,22 @@
   margin: 2% 0;
 }
 .prompt-settings select,
-.prompt-settings input {
-  padding: 2%;
+.prompt-settings input[type="text"] {
+  padding: 4% 2%;
   border-radius: 15px;
   background: transparent;
 }
+.prompt-settings input[type="text"] {
+  margin: 4% 0;
+}
+.prompt-settings input.radio,
+.prompt-settings input[type="radio"] {
+  /* margin: 10px 20px 20px 20px; */
+  margin: 2px 0 0 2px;
+}
 .prompt-settings button {
   padding: 4%;
-  margin: 8% 0;
+  margin: 4% 0;
   background-color: rgb(15, 223, 105);
   border: 2px solid rgb(150, 245, 150);
   border-radius: 20px;
@@ -51,7 +61,7 @@
   border: 2px solid rgb(112, 239, 112);
 }
 .prompt-settings h1 {
-  margin: 5% 0 10% 0;
+  margin: 5% 0 5% 0;
 }
 .prompt-card {
   transform: translate(5%, 25%);
@@ -61,4 +71,9 @@
   align-items: center;
   width: 70%;
   height: 100%;
+}
+.prompt-selection {
+  display: flex;
+  flex-direction: row;
+  gap: 10%;
 }

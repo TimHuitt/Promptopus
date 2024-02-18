@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react'
+import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
 import Card from '../../components/Card'
@@ -9,30 +9,31 @@ import styles from './prompts.module.css'
 import Image from 'next/image'
 
 const Prompts: React.FC = () => {
-  const historyRef = useRef<string[]>([''])
+  const historyRef = useRef<string[]>(['whisper', 'whispering', 'gossamer', 'meadow'])
+  const countRef = useRef<HTMLSelectElement | null>(null)
+  const themeRef = useRef<HTMLInputElement | null>(null)
   const [ prompts, setPrompts ] = useState<string[]>(['Loading...'])
-  const [ count, setCount ] = useState<number[]>([4])
-  const [ theme, setTheme ] = useState<string[]>(['dragons'])
+  const [ promptType, setPromptType ] = useState<string>('emoji')
+  const [ count, setCount ] = useState<number>(4)
+  const [ theme, setTheme ] = useState<string>('')
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
   const [ disabled, setDisabled ] = useState<boolean>(false)
   
   const sendRequest = async (): Promise<any> => {
-    
     const url = "http://localhost:4000/prompts/prompts";
     // const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
     
-    console.log(historyRef)
     try {
       const res = await fetch(url, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ content: `
-          count: ${count},
-          theme: ${theme},
-          history: ${historyRef.current}
-        `}),
+        body: JSON.stringify({ content:{
+          count: count,
+          theme: promptType === 'emoji' ? `emoji, ${theme}` : theme,
+          history: historyRef.current.join(',')
+        }}),
       });
 
 
@@ -49,13 +50,16 @@ const Prompts: React.FC = () => {
 
   const handleSubmit = async () => {
 
-    setShowPrompts(true)
-    setDisabled(true)
     
     if (disabled) {
       console.error('Please wait for the current request.');
       return;
     }
+
+    
+
+    setShowPrompts(true)
+    setDisabled(true)
 
     try {
       const resData = await sendRequest();
@@ -76,6 +80,19 @@ const Prompts: React.FC = () => {
       setDisabled(false)
     }
   };
+
+  const handleType = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPromptType(prevType => prevType === 'emoji' ? 'words' : 'emoji')
+  }
+
+  const updateCount = () => {
+    setCount(parseInt(countRef.current.value))
+  }
+
+  const updateTheme = () => {
+    setTheme(themeRef.current.value)
+  }
+  
 
   return (
     <>
@@ -102,19 +119,39 @@ const Prompts: React.FC = () => {
           </div>
         ) : (
           <div className={styles['prompt-settings']}>
-            <h1>Prompt Settings</h1>
+            {/* <h1>Prompt Settings</h1> */}
             <form id="prompts-form">
               <label htmlFor="prompts-count">Number of Prompts:
-                <select id="prompts-count" name="prompts-count">
+                <select id="prompts-count" name="prompts-count" ref={countRef} onChange={updateCount}>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
-                  <option>4</option>
+                  <option selected>4</option>
                 </select>
               </label>
               <label htmlFor="prompt-theme">Theme:
-                <input type="text" placeholder="(optional)"/>
+                <input type="text" placeholder="(optional)" ref={themeRef} onChange={updateTheme}/>
               </label>
+              <div className={styles['prompt-selection']}>
+                
+                  <input 
+                    type="radio" 
+                    id="emoji" 
+                    name="prompt_selection" 
+                    checked={ promptType==="emoji" } 
+                    onChange={ handleType } 
+                  />
+                  <label htmlFor='emoji'> Emojis</label>
+                
+                  <input 
+                    type="radio" 
+                    id="words" 
+                    name="prompt_selection" 
+                    checked={promptType==="words"} 
+                    onChange={ handleType } 
+                  />
+                  <label htmlFor='words'> Words</label>
+              </div>
               <button type="button" onClick={ handleSubmit }>Generate Prompts!</button>
             </form>
           </div>
