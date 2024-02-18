@@ -4,7 +4,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 100vh;
+  height: calc(100vh - 8vh);
   font-size: 1.25rem;
 }
 .prompt-settings {
@@ -65,19 +65,25 @@
   margin: 5% 0 5% 0;
 }
 .prompt-card {
-  transform: translate(5%, 25%);
+  transform: translate(8%, 18%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 70%;
-  height: 100%;
+  height: 80%;
 }
 .refresh-container {
   position: absolute;
   right: 4%;
-  bottom: 12%;
+  bottom: 2%;
 }
+.back-container {
+  position: absolute;
+  left: 4%;
+  bottom: 2%;
+}
+.back-container button,
 .refresh-container button {
   align-self: flex-end;
   margin: -1%;
@@ -85,9 +91,14 @@
   padding: 2%;
   border-radius: 50%;
 }
+.back-container button {
+  background-color: rgb(180, 61, 31);
+  border-color: rgb(237, 130, 103);
+}
 .refresh-container button:active {
   background-color: rgb(8, 146, 68);
 }
+.back-container img,
 .refresh-container img {
   max-height: 50px;
 }

@@ -73,7 +73,7 @@
   padding: 2%;
   border-radius: 15px;
 }
-.stories-settings button {
+.Stories button {
   padding: 4%;
   margin: 8% 0;
   background-color: rgb(15, 223, 105);
@@ -87,4 +87,34 @@
 }
 .stories-settings h1 {
   margin: 5% 0 10% 0;
+}
+
+.refresh-container {
+  position: absolute;
+  right: 4%;
+  bottom: 2%;
+}
+.back-container {
+  position: absolute;
+  left: 4%;
+  bottom: 2%;
+}
+.back-container button,
+.refresh-container button {
+  align-self: flex-end;
+  margin: -1%;
+  margin-right: 4%;
+  padding: 2%;
+  border-radius: 50%;
+}
+.back-container button {
+  background-color: rgb(180, 61, 31);
+  border-color: rgb(237, 130, 103);
+}
+.refresh-container button:active {
+  background-color: rgb(8, 146, 68);
+}
+.back-container img,
+.refresh-container img {
+  max-height: 50px;
 }

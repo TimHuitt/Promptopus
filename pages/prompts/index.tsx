@@ -122,6 +122,14 @@ const Prompts: React.FC = () => {
                 <img src='/images/refresh.svg' />
               </button>
             </div>
+            <div className={styles['back-container']}>
+              <form action="/prompts">
+                <input type="hidden" />
+                <button type="submit">
+                  <img src='/images/back.svg' />
+                </button>
+              </form>
+            </div>
           </>
         ) : (
           <div className={styles['prompt-settings']}>
