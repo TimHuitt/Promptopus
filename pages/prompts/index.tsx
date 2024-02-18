@@ -20,8 +20,8 @@ const Prompts: React.FC = () => {
   const [ disabled, setDisabled ] = useState<boolean>(false)
   
   const sendRequest = async (): Promise<any> => {
-    // const url = "http://localhost:4000/prompts/prompts";
-    const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
+    const url = "http://localhost:4000/prompts/prompts";
+    // const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
     
     try {
       const res = await fetch(url, {
@@ -111,12 +111,18 @@ const Prompts: React.FC = () => {
 
       <div className={styles.Prompts} >
         { showPrompts ? (
-          <div className={styles['prompt-card']}>
-            {prompts.map((prompt) => (
-              <Card prompt={ prompt } />
-            ))}
-            <button type="button" onClick={ handleSubmit }>Refresh!</button>
-          </div>
+          <>
+            <div className={styles['prompt-card']}>
+              {prompts.map((prompt) => (
+                <Card prompt={ prompt } />
+              ))}
+            </div>
+            <div className={styles['refresh-container']}>
+              <button type="button" onClick={ handleSubmit }>
+                <img src='/images/refresh.svg' />
+              </button>
+            </div>
+          </>
         ) : (
           <div className={styles['prompt-settings']}>
             {/* <h1>Prompt Settings</h1> */}
