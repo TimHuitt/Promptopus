@@ -117,12 +117,12 @@ const Prompts: React.FC = () => {
                 <Card prompt={ prompt } />
               ))}
             </div>
-            <div className={styles['refresh-container']}>
+            <div className="refresh-container">
               <button type="button" onClick={ handleSubmit }>
                 <img src='/images/refresh.svg' />
               </button>
             </div>
-            <div className={styles['back-container']}>
+            <div className="back-container">
               <form action="/prompts">
                 <input type="hidden" />
                 <button type="submit">
@@ -134,7 +134,7 @@ const Prompts: React.FC = () => {
         ) : (
           <div className={styles['prompt-settings']}>
             {/* <h1>Prompt Settings</h1> */}
-            <form id="prompts-form">
+            <form id="prompts-form" className={styles['prompts-form']} >
               <label htmlFor="prompts-count">Number of Prompts:
                 <select id="prompts-count" name="prompts-count" ref={countRef} onChange={updateCount}>
                   <option>1</option>
