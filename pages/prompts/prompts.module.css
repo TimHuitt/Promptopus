@@ -15,7 +15,7 @@
   width: 80%;
   max-width: 500px;
   height: 30vh;
-  padding-top: 4%;
+  padding-top: 20%;
   border-radius: 30px;
 }
 .prompt-settings form {
@@ -62,7 +62,7 @@
   border: 2px solid rgb(112, 239, 112);
 }
 .prompt-settings h1 {
-  margin: 5% 0 5% 0;
+  margin: 2% 0 5% 0;
 }
 .prompt-card {
   transform: translate(8%, 18%);
@@ -73,9 +73,25 @@
   width: 70%;
   height: 80%;
 }
-.prompt-selection {
+.type-selection {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 75%;
+  gap: 10%;
+}
+.emoji-button {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 1.5rem;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.words-button {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 1.5rem;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.active {
+  border-color: rgb(43, 43, 43) !important;
 }
