@@ -15,7 +15,7 @@
   width: 80%;
   max-width: 500px;
   height: 30vh;
-  padding-top: 4%;
+  padding-top: 20%;
   border-radius: 30px;
 }
 .prompt-settings form {
@@ -49,7 +49,7 @@
   /* margin: 10px 20px 20px 20px; */
   margin: 2px 0 0 2px;
 }
-.Prompts button {
+.prompts-form button {
   padding: 4%;
   margin: 4% 0;
   background-color: rgb(15, 223, 105);
@@ -62,7 +62,7 @@
   border: 2px solid rgb(112, 239, 112);
 }
 .prompt-settings h1 {
-  margin: 5% 0 5% 0;
+  margin: 2% 0 5% 0;
 }
 .prompt-card {
   transform: translate(8%, 18%);
@@ -73,38 +73,25 @@
   width: 70%;
   height: 80%;
 }
-.refresh-container {
-  position: absolute;
-  right: 4%;
-  bottom: 2%;
-}
-.back-container {
-  position: absolute;
-  left: 4%;
-  bottom: 2%;
-}
-.back-container button,
-.refresh-container button {
-  align-self: flex-end;
-  margin: -1%;
-  margin-right: 4%;
-  padding: 2%;
-  border-radius: 50%;
-}
-.back-container button {
-  background-color: rgb(180, 61, 31);
-  border-color: rgb(237, 130, 103);
-}
-.refresh-container button:active {
-  background-color: rgb(8, 146, 68);
-}
-.back-container img,
-.refresh-container img {
-  max-height: 50px;
-}
-.prompt-selection {
+.type-selection {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 75%;
+  gap: 10%;
+}
+.emoji-button {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 1.5rem;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.words-button {
+  font-family: 'Gochi Hand', cursive;
+  font-size: 1.5rem;
+  background-color: transparent !important;
+  border-color: transparent !important;
+}
+.active {
+  border-color: rgb(43, 43, 43) !important;
 }

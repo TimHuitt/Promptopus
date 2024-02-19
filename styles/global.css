@@ -66,3 +66,48 @@ h3 {
   min-width: 500px;
   max-width: 700px;
 }
+
+.refresh-container {
+  position: absolute;
+  right: 4%;
+  bottom: 2%;
+}
+.back-container {
+  position: absolute;
+  left: 4%;
+  bottom: 2%;
+}
+.back-container button,
+.refresh-container button {
+  align-self: flex-end;
+  margin: -1%;
+  margin-right: 4%;
+  padding: 2%;
+  border-radius: 50%;
+}
+.refresh-container button {
+  background-color: rgb(15, 223, 105);
+  border: 2px solid rgb(150, 245, 150);
+}
+.refresh-container button:hover {
+  background-color: rgb(22, 245, 119);
+  border: 2px solid rgb(112, 239, 112);
+}
+.refresh-container button:active {
+  background-color: rgb(8, 146, 68);
+}
+.back-container button {
+  background-color: rgb(180, 61, 31);
+  border-color: rgb(237, 130, 103);
+}
+.back-container button:hover {
+  background-color: rgb(166, 27, 17);
+  border: 2px solid rgb(229, 97, 77);
+}
+.back-container button:active {
+  background-color: rgb(8, 146, 68);
+}
+.back-container img,
+.refresh-container img {
+  max-height: 50px;
+}

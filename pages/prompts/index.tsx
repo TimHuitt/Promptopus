@@ -13,7 +13,7 @@ const Prompts: React.FC = () => {
   const countRef = useRef<HTMLSelectElement | null>(null)
   const themeRef = useRef<HTMLInputElement | null>(null)
   const [ prompts, setPrompts ] = useState<string[]>(['Loading...'])
-  const [ promptType, setPromptType ] = useState<string>('emoji')
+  const [ promptType, setPromptType ] = useState<boolean>(true)
   const [ count, setCount ] = useState<number>(4)
   const [ theme, setTheme ] = useState<string>('')
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
@@ -31,7 +31,7 @@ const Prompts: React.FC = () => {
         },
         body: JSON.stringify({ content:{
           count: count,
-          theme: promptType === 'emoji' ? `emoji, ${theme}` : theme,
+          theme: promptType ? `emoji, ${theme}` : theme,
           history: historyRef.current.join(',')
         }}),
       });
@@ -81,8 +81,8 @@ const Prompts: React.FC = () => {
     }
   };
 
-  const handleType = (e: React.ChangeEvent<HTMLInputElement>) => {
-    setPromptType(prevType => prevType === 'emoji' ? 'words' : 'emoji')
+  const handleType = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setPromptType(prevType => !prevType)
   }
 
   const updateCount = () => {
@@ -117,12 +117,12 @@ const Prompts: React.FC = () => {
                 <Card prompt={ prompt } />
               ))}
             </div>
-            <div className={styles['refresh-container']}>
+            <div className="refresh-container">
               <button type="button" onClick={ handleSubmit }>
                 <img src='/images/refresh.svg' />
               </button>
             </div>
-            <div className={styles['back-container']}>
+            <div className="back-container">
               <form action="/prompts">
                 <input type="hidden" />
                 <button type="submit">
@@ -134,7 +134,7 @@ const Prompts: React.FC = () => {
         ) : (
           <div className={styles['prompt-settings']}>
             {/* <h1>Prompt Settings</h1> */}
-            <form id="prompts-form">
+            <form id="prompts-form" className={styles['prompts-form']} >
               <label htmlFor="prompts-count">Number of Prompts:
                 <select id="prompts-count" name="prompts-count" ref={countRef} onChange={updateCount}>
                   <option>1</option>
@@ -146,25 +146,23 @@ const Prompts: React.FC = () => {
               <label htmlFor="prompt-theme">Theme:
                 <input type="text" placeholder="(optional)" ref={themeRef} onChange={updateTheme}/>
               </label>
-              <div className={styles['prompt-selection']}>
+              <div className={styles['type-selection']}>
                 
-                  <input 
-                    type="radio" 
-                    id="emoji" 
-                    name="prompt_selection" 
-                    checked={ promptType==="emoji" } 
-                    onChange={ handleType } 
-                  />
-                  <label htmlFor='emoji'> Emojis</label>
-                
-                  <input 
-                    type="radio" 
-                    id="words" 
-                    name="prompt_selection" 
-                    checked={promptType==="words"} 
-                    onChange={ handleType } 
-                  />
-                  <label htmlFor='words'> Words</label>
+                  <button 
+                    type="button" 
+                    id="emoji"
+                    className={`${styles['emoji-button']} ${promptType ? styles['active'] : ''}`}
+                    onClick={ handleType } 
+                  > Emojis
+                  </button>
+                  <button 
+                    type="button" 
+                    id="words"
+                    className={`${styles['words-button']} ${promptType ? '' : styles['active']}`}
+                    onClick={ handleType } 
+                  > Words 
+                  </button>
+
               </div>
               <button type="button" onClick={ handleSubmit }>Generate Prompts!</button>
             </form>
