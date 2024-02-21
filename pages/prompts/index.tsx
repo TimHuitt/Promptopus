@@ -9,7 +9,7 @@ import styles from './prompts.module.css'
 import Image from 'next/image'
 
 const Prompts: React.FC = () => {
-  const historyRef = useRef<string[]>(['whisper', 'whispering', 'gossamer', 'meadow'])
+  const historyRef = useRef<string[]>(['whisper', 'whispering', 'gossamer', 'meadow', '&#x1F98B;', '&#x1F30D;', '&#x1F33F;', '&#x1F52B;'])
   const countRef = useRef<HTMLSelectElement | null>(null)
   const themeRef = useRef<HTMLInputElement | null>(null)
   const [ prompts, setPrompts ] = useState<string[]>(['Loading...'])
@@ -93,7 +93,7 @@ const Prompts: React.FC = () => {
     setTheme(themeRef.current.value)
   }
   
-
+  console.log(prompts)
   return (
     <>
       <Head>
