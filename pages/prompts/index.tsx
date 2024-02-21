@@ -93,7 +93,6 @@ const Prompts: React.FC = () => {
     setTheme(themeRef.current.value)
   }
   
-  console.log(prompts)
   return (
     <>
       <Head>
