@@ -49,7 +49,7 @@ const Prompts: React.FC = () => {
   };
 
   const handleSubmit = async () => {
-
+    setPrompts(['Loading...'])
     
     if (disabled) {
       console.error('Please wait for the current request.');
@@ -101,14 +101,6 @@ const Prompts: React.FC = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-
-      {/* style={{ 
-        backgroundImage: `url('images/bg.jpg')`,
-        backgroundSize: '100% 90%',
-        backgroundPosition: 'center',
-        backgroundRepeat: 'no-repeat',
-      }} */}
-
       <div className={styles.Prompts} >
         { showPrompts ? (
           <>
@@ -133,14 +125,14 @@ const Prompts: React.FC = () => {
           </>
         ) : (
           <div className={styles['prompt-settings']}>
-            {/* <h1>Prompt Settings</h1> */}
+            <h1>Prompt Settings</h1>
             <form id="prompts-form" className={styles['prompts-form']} >
               <label htmlFor="prompts-count">Number of Prompts:
-                <select id="prompts-count" name="prompts-count" ref={countRef} onChange={updateCount}>
+                <select id="prompts-count" name="prompts-count" defaultValue='4' ref={countRef} onChange={updateCount}>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
-                  <option selected>4</option>
+                  <option>4</option>
                 </select>
               </label>
               <label htmlFor="prompt-theme">Theme:
@@ -170,14 +162,7 @@ const Prompts: React.FC = () => {
         )}
       </div>
       {showPrompts ? <Timer /> : ''}
-      <div className="bg-image">
-        <Image
-          src='/images/bg.jpg'
-          width={500}
-          height={500}
-          alt=""
-        />      
-      </div>
+      <div className={styles["bg-image"]} />
     </>
   )
 }

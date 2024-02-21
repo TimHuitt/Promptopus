@@ -16,28 +16,20 @@ const Home: React.FC = () => {
       </Head>
       <Header />
       <Link href="/prompts" style={{width: '100%', height: '100%'}}>
-        <div className={styles['prompts']} style={{
-          backgroundImage: 'url("/images/arm-prompts.png")',
-          backgroundSize: '100% 100%',
-          backgroundPosition: 'top',
-          backgroundRepeat: 'no-repeat',
-        }}>
-          {/* <h1>Prompts</h1> */}
+        <div className={styles.prompts}>
+          <div className={styles['prompts-text']}>
+            <h1>Prompts</h1>
+          </div>
         </div>
       </Link>
       <Link href="/stories">
-        <div className={styles['stories']}>
-          {/* <h1>Stories</h1> */}
+        <div className={styles.stories}>
+          <div className={styles['stories-text']}>
+            <h1>Stories</h1>
+          </div>
         </div>
       </Link>
-      <div className="bg-image">
-        <Image
-          src='/images/bg-home.png'
-          width={500}
-          height={500}
-          alt=""
-        />      
-      </div>
+      <div className={styles["bg-image"]} />
     </div>
   );
 }

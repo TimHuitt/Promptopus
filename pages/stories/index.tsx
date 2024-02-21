@@ -69,14 +69,7 @@ const Stories: React.FC = () => {
         {showStories ? <Timer /> : ''}
 
 
-        <div className="bg-image">
-          <Image
-            src='/images/bg-stories.png'
-            width={500}
-            height={500}
-            alt=""
-          />      
-        </div>
+        <div className={styles["bg-image"]} />
     </>
   )
 }
