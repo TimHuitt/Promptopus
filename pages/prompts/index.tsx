@@ -61,7 +61,7 @@ const Prompts: React.FC = () => {
       return Math.floor(Math.random() * 674)
     }
 
-    const getEmojis = (data) => {
+    const getData = (data) => {
       return([data[rng()], data[rng()], data[rng()], data[rng()]])
     }
 
@@ -69,11 +69,11 @@ const Prompts: React.FC = () => {
     setDisabled(true)
 
     if (promptType) {
-      const emojis = getEmojis(Data.emojis)
+      const emojis = getData(Data.emojis)
       setPrompts(emojis)
       setDisabled(false)
     } else {
-      const words = getEmojis(Data.words)
+      const words = getData(Data.words)
       setPrompts(words)
       setDisabled(false)
       // try {
