@@ -78,12 +78,12 @@ select {
 .refresh-container {
   position: absolute;
   right: 4%;
-  bottom: 9%;
+  bottom: 100px;
 }
 .back-container {
   position: absolute;
   left: 4%;
-  bottom: 9%;
+  bottom: 100px;
 }
 .back-container button,
 .refresh-container button {
