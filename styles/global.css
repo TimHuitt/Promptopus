@@ -62,14 +62,13 @@ select {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
   width: 100%;
   user-select: none;
   pointer-events: none;
   z-index: -1;
 }
 .bg-image img {
-  height: 100%;
+  height: calc(100% - 80px);
   width: 100%;
   min-width: 500px;
   max-width: 700px;
@@ -77,13 +76,13 @@ select {
 
 .refresh-container {
   position: absolute;
-  right: 4%;
-  bottom: 100px;
+  right: 10%;
+  bottom: 10%;
 }
 .back-container {
   position: absolute;
-  left: 4%;
-  bottom: 100px;
+  left: 6%;
+  bottom: 10%;
 }
 .back-container button,
 .refresh-container button {
@@ -95,7 +94,7 @@ select {
   cursor: pointer;
 }
 .refresh-container button {
-  background-color: rgb(15, 223, 105);
+  background-color: rgba(15, 223, 105, 0.587);
   border: 2px solid rgb(150, 245, 150);
 }
 .refresh-container button:hover {
@@ -106,7 +105,7 @@ select {
   background-color: rgb(8, 146, 68);
 }
 .back-container button {
-  background-color: rgb(180, 61, 31);
+  background-color: rgba(180, 61, 31, 0.587);
   border: 2px solid rgb(237, 130, 103);
 }
 .back-container button:hover {
@@ -119,4 +118,13 @@ select {
 .back-container img,
 .refresh-container img {
   max-height: 50px;
+}
+
+@media (max-height: 700px) {
+  .refresh-container {
+    bottom: 10%;
+  }
+  .back-container {
+    bottom: 10%;
+  }
 }

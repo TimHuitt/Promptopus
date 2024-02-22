@@ -62,7 +62,11 @@ const Prompts: React.FC = () => {
     }
 
     const getData = (data) => {
-      return([data[rng()], data[rng()], data[rng()], data[rng()]])
+      let output: string[] = []
+      for (let i = 0; i < count; i++) {
+        output.push(data[rng()])
+      }
+      return(output)
     }
 
     setShowPrompts(true)
@@ -98,6 +102,7 @@ const Prompts: React.FC = () => {
   };
 
   const handleBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setCount(4)
     setShowPrompts(false)
   }
 
@@ -112,6 +117,8 @@ const Prompts: React.FC = () => {
   const updateTheme = () => {
     setTheme(themeRef.current.value)
   }
+
+  console.log(prompts)
   
   return (
     <>
@@ -127,22 +134,23 @@ const Prompts: React.FC = () => {
               {prompts.map((prompt) => (
                 <Card prompt={ prompt } />
               ))}
-            </div>
-            <div className="refresh-container">
-              <button type="button" onClick={ handleSubmit }>
-                <img src='/images/refresh.svg' />
-              </button>
-            </div>
-            <div className="back-container">
-              <button type="button" onClick={ handleBack }>
-                <img src='/images/back.svg' />
-              </button>
+
+              <div className="refresh-container">
+                <button type="button" onClick={ handleSubmit }>
+                  <img src='/images/refresh.svg' />
+                </button>
+              </div>
+              <div className="back-container">
+                <button type="button" onClick={ handleBack }>
+                  <img src='/images/back.svg' />
+                </button>
+              </div>
             </div>
           </>
         ) : (
           <div className={styles['prompt-settings']}>
-            <h1>Prompt Settings</h1>
             <form id="prompts-form" className={styles['prompts-form']} >
+              <h1>Prompt Settings</h1>
               <label htmlFor="prompts-count">Number of Prompts:
                 <select id="prompts-count" name="prompts-count" defaultValue='4' ref={countRef} onChange={updateCount}>
                   <option>1</option>

@@ -16,7 +16,7 @@
   transform: translate(120%, -50%);
   width: 80%;
   max-width: 500px;
-  height: 50vh;
+  height: 60%;
   padding-top: 15%;
   border-radius: 30px;
   background-image: url("/images/notebook.png");
@@ -30,7 +30,15 @@
     transform: translate(120%, -50%);
   }
   100% {
-    transform: translate(12%, -10%);
+    transform: translate(12%, 0%);
+  }
+}
+@keyframes slide-story-settings-small {
+  0% {
+    transform: translate(120%, -50%);
+  }
+  100% {
+    transform: translate(12%, 0%);
   }
 }
 
@@ -42,8 +50,7 @@
   justify-content: center;
   text-align: center;
   width: 90%;
-  height: 75%;
-  padding-top: 5%;
+  padding-top: 10%;
 }
 .prompt-settings label {
   display: flex;
@@ -62,14 +69,13 @@
 .prompt-settings input[type="text"] {
   margin: 4% 0;
 }
-.prompt-settings input.radio,
-.prompt-settings input[type="radio"] {
-  /* margin: 10px 20px 20px 20px; */
-  margin: 2px 0 0 2px;
+.prompt-settings label {
+  font-size: 1rem;
 }
 .prompts-form button {
   padding: 4%;
   margin: 4% 0;
+  font-size: 1.25rem;
   background-color: rgb(15, 223, 105);
   border: 2px solid rgb(150, 245, 150);
   border-radius: 20px;
@@ -81,21 +87,47 @@
 }
 .prompt-settings h1 {
   font-size: 2rem;
+  margin-bottom: 2%;
 }
 .prompt-card {
-  transform: translate(12%, -10%);
+  position: relative;
+  transform: translate(12%, 0%);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 80%;
   max-width: 500px;
-  height: 50%;
+  min-height: 60%;
   border-radius: 30px;
   border-radius: 30px;
   background-image: url("/images/notebook.png");
   background-size: 100% 100%;
   background-repeat: no-repeat; 
+}
+@media (max-height: 700px) {
+  .Prompts {
+    font-size: .75rem;
+  }
+  .prompt-settings {
+    min-height: 75%;
+    animation: slide-story-settings-small ease 1s .25s forwards;
+  }
+  .prompt-card {
+    min-height: 75%;
+    transform: translate(12%, 0);
+  }
+  .prompts-form button {
+    margin: 1%;
+    font-size: 1rem;
+  }
+  .prompt-settings h1 {
+    font-size: 1.5rem;
+  }
+  .prompt-settings select,
+  .prompt-settings input[type="text"] {
+    padding: 2% 1%;
+  }
 }
 .type-selection {
   display: flex;
@@ -124,9 +156,9 @@
   top: 7%;
   left: 0;
   height: 100vh;
-  width: 100%;
+  min-width: 100%;
   background-image: url("/images/prompts-supplies.png");
-  background-size: contain;
+  background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   z-index: -1;
