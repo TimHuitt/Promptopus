@@ -5,7 +5,7 @@ import Card from '../../components/Card'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
 import styles from './prompts.module.css'
-import Data from './emoji-codes.json'
+import Data from './data.json'
 
 import Image from 'next/image'
 
@@ -18,37 +18,36 @@ const Prompts: React.FC = () => {
   const [ theme, setTheme ] = useState<string>('')
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
   const [ disabled, setDisabled ] = useState<boolean>(false)
-  const [ exclusions, setExclusions ] = useState<string[]>(Data)
-  const [ prompts, setPrompts ] = useState<string[]>([exclusions[1]])
+  const [ prompts, setPrompts ] = useState<string[]>([''])
   
-//   const sendRequest = async (): Promise<any> => {
-//     // const url = "http://localhost:4000/prompts/prompts";
-//     const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
-//     
-//     try {
-//       const res = await fetch(url, {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ content:{
-//           count: count,
-//           theme: promptType ? `emoji, ${theme}` : theme,
-//           history: historyRef.current.join(',')
-//         }}),
-//       });
-// 
-// 
-//       if (res.ok) {
-//         const jsonData = await res.json();
-//         return jsonData;
-//       } else {
-//         throw new Error("Invalid request!");
-//       }
-//     } catch (err) {
-//       console.error(err.message);
-//     }
-//   };
+  const sendRequest = async (): Promise<any> => {
+    // const url = "http://localhost:4000/prompts/prompts";
+    const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
+    
+    try {
+      const res = await fetch(url, {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ content:{
+          count: count,
+          theme: theme,
+          history: historyRef.current.join(',')
+        }}),
+      });
+
+
+      if (res.ok) {
+        const jsonData = await res.json();
+        return jsonData;
+      } else {
+        throw new Error("Invalid request!");
+      }
+    } catch (err) {
+      console.error(err.message);
+    }
+  };
 
   const handleSubmit = async () => {
     setPrompts(['Loading...'])
@@ -58,30 +57,49 @@ const Prompts: React.FC = () => {
       return;
     }
 
-    
+    const rng = () => {
+      return Math.floor(Math.random() * 674)
+    }
+
+    const getEmojis = (data) => {
+      return([data[rng()], data[rng()], data[rng()], data[rng()]])
+    }
 
     setShowPrompts(true)
     setDisabled(true)
 
-//     try {
-//       const resData = await sendRequest();
-// 
-//       if (resData) {
-//         let response = typeof resData.response === 'string' 
-//           ? JSON.parse(resData.response)
-//           : resData.response
-//         response = Object.values(response)
-//         historyRef.current.push(...response)
-//         setPrompts(response)
-//       } else {
-//         console.log('no data')
-//       }
-//     } catch (err) {
-//       console.log(err);
-//     } finally {
-  //     }
-  setDisabled(false)
-};
+    if (promptType) {
+      const emojis = getEmojis(Data.emojis)
+      setPrompts(emojis)
+      setDisabled(false)
+    } else {
+      const words = getEmojis(Data.words)
+      setPrompts(words)
+      setDisabled(false)
+      // try {
+      //   const resData = await sendRequest();
+      //   
+      //   if (resData) {
+      //     let response = typeof resData.response === 'string' 
+      //       ? JSON.parse(resData.response)
+      //       : resData.response
+      //     response = Object.values(response)
+      //     historyRef.current.push(...response)
+      //     setPrompts(response)
+      //   } else {
+      //     console.log('no data')
+      //   }
+      // } catch (err) {
+      //   console.log(err);
+      // } finally {
+      //   setDisabled(false)
+      // }
+    }
+  };
+
+  const handleBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setShowPrompts(false)
+  }
 
   const handleType = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setPromptType(prevType => !prevType)
@@ -116,12 +134,9 @@ const Prompts: React.FC = () => {
               </button>
             </div>
             <div className="back-container">
-              <form action="/prompts">
-                <input type="hidden" />
-                <button type="submit">
-                  <img src='/images/back.svg' />
-                </button>
-              </form>
+              <button type="button" onClick={ handleBack }>
+                <img src='/images/back.svg' />
+              </button>
             </div>
           </>
         ) : (
