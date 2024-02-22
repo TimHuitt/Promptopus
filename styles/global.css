@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Gochi+Hand&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
 :root {
   --bg: rgb(174, 167, 220);
@@ -20,18 +20,21 @@ html {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-image: url("/images/bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: repeat;
 }
 body {
   position: relative;
   width: 100%;
   max-width: 700px;
   margin: 0;
-  background-color: var(--bg);
   color: var(--font);
   font-size: 16px;
-  overflow: hidden;
-  font-family: 'Gochi Hand', cursive;
+  font-family: "Fredoka", sans-serif;
   letter-spacing: 1.3px;
+  overflow: hidden;
 }
 a {
   color: var(--font);
@@ -39,12 +42,17 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 button {
+  font-family: "Fredoka", sans-serif;
   -webkit-tap-highlight-color: transparent;
 }
 h1,
 h2,
 h3 {
   margin: 0;
+}
+input,
+select {
+  font-family: "Fredoka", sans-serif;
 }
 
 .bg-image {
@@ -70,12 +78,12 @@ h3 {
 .refresh-container {
   position: absolute;
   right: 4%;
-  bottom: 2%;
+  bottom: 9%;
 }
 .back-container {
   position: absolute;
   left: 4%;
-  bottom: 2%;
+  bottom: 9%;
 }
 .back-container button,
 .refresh-container button {
@@ -84,6 +92,7 @@ h3 {
   margin-right: 4%;
   padding: 2%;
   border-radius: 50%;
+  cursor: pointer;
 }
 .refresh-container button {
   background-color: rgb(15, 223, 105);
@@ -98,7 +107,7 @@ h3 {
 }
 .back-container button {
   background-color: rgb(180, 61, 31);
-  border-color: rgb(237, 130, 103);
+  border: 2px solid rgb(237, 130, 103);
 }
 .back-container button:hover {
   background-color: rgb(166, 27, 17);

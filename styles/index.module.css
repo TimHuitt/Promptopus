@@ -27,15 +27,21 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 75%;
+  height: 100%;
   padding: 0 20px;
   border-radius: 40px;
-  background: blue;
-  animation: slide-prompts ease 1s;
-  animation-delay: .50s;
-  animation-iteration-count: 1;
-  animation-fill-mode: forwards;
+  background-image: url("/images/arm-prompts.png");
+  background-size: 190% 100%;
+  background-position: left;
+  background-repeat: no-repeat; 
+  animation: slide-prompts ease 1s .50s forwards;
   transform: translateY(100vh);
+}
+.prompts-text {
+  transform: translate(-10%, -100%) rotate(-15deg);
+}
+.stories-text {
+  transform: translateY(-270%) rotate(14deg);
 }
 .stories {
   position: absolute;
@@ -45,12 +51,12 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 75%;
+  height: 100%;
   padding: 0 20px;
   border-radius: 40px;
   background-image: url("/images/arm-stories.png");
-  background-size: 100% 100%;
-  background-position: top;
+  background-size: 190% 100%;
+  background-position: right;
   background-repeat: no-repeat; 
   animation: slide-stories ease 1s .75s forwards;
   transform: translateY(100vh);
@@ -61,7 +67,6 @@
   top: 0;
   left: 0;
 }
-
 @keyframes slide-stories {
   0% {
     opacity: 0;
@@ -69,7 +74,7 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(-25vh);
   }
 }
 @keyframes slide-prompts {
@@ -79,11 +84,23 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(10vh);
+    transform: translateY(-24vh);
   }
 }
 
 
+.bg-image {
+  position: absolute;
+  top: 7%;
+  left: 0;
+  height: 100vh;
+  width: 100%;
+  background-image: url("/images/home-supplies.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
+  z-index: -1;
+}
 
 /* .prompts {
   transform: translate(-5%, -10%) rotate(-13deg);
