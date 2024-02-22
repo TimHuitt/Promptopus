@@ -96,7 +96,7 @@
   height: 100vh;
   width: 100%;
   background-image: url("/images/home-supplies.png");
-  background-size: contain;
+  background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   z-index: -1;
