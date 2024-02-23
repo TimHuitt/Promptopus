@@ -31,11 +31,18 @@ body {
   width: 100%;
   max-width: 700px;
   margin: 0;
+  height: calc(100vh - 50px);
   color: var(--font);
   font-size: 16px;
   font-family: "Fredoka", sans-serif;
   letter-spacing: 1.3px;
   overflow: hidden;
+}
+@media screen and (max-width: 480px) {
+  body {
+    margin-top: 50px;
+    bottom: 50px;
+  }
 }
 a {
   color: var(--font);
@@ -78,12 +85,12 @@ select {
 .refresh-container {
   position: absolute;
   right: 6%;
-  bottom: 20px;
+  bottom: 10px;
 }
 .back-container {
   position: absolute;
   left: 6%;
-  bottom: 20px;
+  bottom: 10px;
 }
 .back-container button,
 .refresh-container button {
