@@ -17,15 +17,15 @@
   width: 80%;
   max-width: 500px;
   height: 60%;
-  padding-top: 15%;
+  padding-top: 80px;
   border-radius: 30px;
   background-image: url("/images/notebook.png");
   background-size: 100% 100%;
   background-repeat: no-repeat; 
-  animation: slide-story-settings ease 1s .25s forwards;
+  animation: slide-prompt-settings ease 1s .25s forwards;
 }
 
-@keyframes slide-story-settings {
+@keyframes slide-prompt-settings {
   0% {
     transform: translate(120%, -50%);
   }
@@ -33,12 +33,12 @@
     transform: translate(12%, 0%);
   }
 }
-@keyframes slide-story-settings-small {
+@keyframes slide-prompt-settings-small {
   0% {
     transform: translate(120%, -50%);
   }
   100% {
-    transform: translate(12%, 0%);
+    transform: translate(12%, 15%);
   }
 }
 
@@ -50,7 +50,7 @@
   justify-content: center;
   text-align: center;
   width: 90%;
-  padding-top: 10%;
+  /* padding-top: 10%; */
 }
 .prompt-settings label {
   display: flex;
@@ -104,21 +104,22 @@
   background-image: url("/images/notebook.png");
   background-size: 100% 100%;
   background-repeat: no-repeat; 
+  overflow: hidden;
 }
 @media (max-height: 700px) {
   .Prompts {
     font-size: .75rem;
   }
   .prompt-settings {
-    min-height: 75%;
-    animation: slide-story-settings-small ease 1s .25s forwards;
+    min-height: 65%;
+    animation: slide-prompt-settings-small ease 1s .25s forwards;
   }
   .prompt-card {
-    min-height: 75%;
-    transform: translate(12%, 0);
+    min-height: 65%;
+    transform: translate(12%, 10%);
   }
   .prompts-form button {
-    margin: 1%;
+    margin-top: 3%;
     font-size: 1rem;
   }
   .prompt-settings h1 {
@@ -128,6 +129,7 @@
   .prompt-settings input[type="text"] {
     padding: 2% 1%;
   }
+  
 }
 .type-selection {
   display: flex;

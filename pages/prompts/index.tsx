@@ -185,7 +185,7 @@ const Prompts: React.FC = () => {
           </div>
         )}
       </div>
-      {showPrompts ? <Timer /> : ''}
+      {/* {showPrompts ? <Timer /> : ''} */}
       <div className={styles["bg-image"]} />
     </>
   )
