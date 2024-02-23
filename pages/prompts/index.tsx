@@ -149,8 +149,9 @@ const Prompts: React.FC = () => {
           </>
         ) : (
           <div className={styles['prompt-settings']}>
-            <form id="prompts-form" className={styles['prompts-form']} >
-              <h1>Prompt Settings</h1>
+              <div className={styles["settings-header"]}>
+                <h1>Prompt Settings</h1>
+              </div>
               <label htmlFor="prompts-count">Number of Prompts:
                 <select id="prompts-count" name="prompts-count" defaultValue='4' ref={countRef} onChange={updateCount}>
                   <option>1</option>
@@ -163,25 +164,22 @@ const Prompts: React.FC = () => {
                 <input type="text" placeholder="(optional)" ref={themeRef} onChange={updateTheme}/>
               </label>
               <div className={styles['type-selection']}>
-                
-                  <button 
-                    type="button" 
-                    id="emoji"
-                    className={`${styles['emoji-button']} ${promptType ? styles['active'] : ''}`}
-                    onClick={ handleType } 
-                  > Emojis
-                  </button>
-                  <button 
-                    type="button" 
-                    id="words"
-                    className={`${styles['words-button']} ${promptType ? '' : styles['active']}`}
-                    onClick={ handleType } 
-                  > Words 
-                  </button>
-
+                <button 
+                  type="button" 
+                  id="emoji"
+                  className={`${styles['emoji-button']} ${promptType ? styles['active'] : ''}`}
+                  onClick={ handleType } 
+                > Emojis
+                </button>
+                <button 
+                  type="button" 
+                  id="words"
+                  className={`${styles['words-button']} ${promptType ? '' : styles['active']}`}
+                  onClick={ handleType } 
+                > Words 
+                </button>
               </div>
               <button type="button" onClick={ handleSubmit }>Generate Prompts!</button>
-            </form>
           </div>
         )}
       </div>

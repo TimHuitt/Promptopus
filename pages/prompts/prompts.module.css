@@ -10,14 +10,16 @@
   overflow: hidden;
 }
 .prompt-settings {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1;
+  grid-template-rows: 7;
+  justify-content: center;
   align-items: center;
   transform: translate(120%, -50%);
   width: 80%;
   max-width: 500px;
   height: 60%;
-  padding-top: 80px;
+  padding: 15% 0 10% 0;
   border-radius: 30px;
   background-image: url("/images/notebook.png");
   background-size: 100% 100%;
@@ -72,7 +74,7 @@
 .prompt-settings label {
   font-size: 1rem;
 }
-.prompts-form button {
+.prompt-settings button {
   padding: 4%;
   margin: 4% 0;
   font-size: 1.25rem;
@@ -106,20 +108,19 @@
   background-repeat: no-repeat; 
   overflow: hidden;
 }
-@media (max-height: 700px) {
+@media (max-height: 768px) {
   .Prompts {
     font-size: .75rem;
   }
   .prompt-settings {
-    min-height: 65%;
     animation: slide-prompt-settings-small ease 1s .25s forwards;
   }
   .prompt-card {
     min-height: 65%;
     transform: translate(12%, 10%);
   }
-  .prompts-form button {
-    margin-top: 3%;
+  .prompt-settings button {
+    margin-top: 1%;
     font-size: 1rem;
   }
   .prompt-settings h1 {
@@ -127,6 +128,7 @@
   }
   .prompt-settings select,
   .prompt-settings input[type="text"] {
+    margin: 1%;
     padding: 2% 1%;
   }
   
@@ -135,7 +137,8 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  width: 75%;
+  align-items: center;
+  width: 100%;
   gap: 10%;
 }
 .emoji-button {
