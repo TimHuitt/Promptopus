@@ -3,7 +3,7 @@
 :root {
   --bg: rgb(174, 167, 220);
   --header-bg: rgb(68, 210, 144);
-  --timer-bg: rgba(80, 225, 235);
+  --timer-bg: rgba(80, 225, 235, 0.854);
   --prompt-bg: transparent;
 
   --font: #2f2f2f;
@@ -24,6 +24,7 @@ html {
   background-size: cover;
   background-position: center;
   background-repeat: repeat;
+  font-size: 14px;
 }
 body {
   position: relative;
@@ -76,13 +77,13 @@ select {
 
 .refresh-container {
   position: absolute;
-  right: 10%;
-  bottom: 10%;
+  right: 6%;
+  bottom: 20px;
 }
 .back-container {
   position: absolute;
   left: 6%;
-  bottom: 10%;
+  bottom: 20px;
 }
 .back-container button,
 .refresh-container button {
@@ -120,11 +121,11 @@ select {
   max-height: 50px;
 }
 
-@media (max-height: 700px) {
+/* @media (max-height: 700px) {
   .refresh-container {
     bottom: 10%;
   }
   .back-container {
     bottom: 10%;
   }
-}
+} */

@@ -27,11 +27,10 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 90%;
-  padding: 0 20px;
+  height: 60%;
   border-radius: 40px;
   background-image: url("/images/arm-prompts.png");
-  background-size: 190% 100%;
+  background-size: 100% 100%;
   background-position: left;
   background-repeat: no-repeat; 
   animation: slide-prompts ease 1s .50s forwards;
@@ -39,10 +38,15 @@
 }
 .prompts-text {
   position: absolute;
-  top: 42%;
-  left: 10%;
+  top: 14%;
+  left: 50%;
+  transform: translateX(-55%) rotate(-14deg);
 }
 .stories-text {
+  position: absolute;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%) rotate(15deg);
 }
 .stories {
   position: absolute;
@@ -52,11 +56,10 @@
   justify-content: center;
   align-items: center;
   width: 50%;
-  height: 90%;
-  padding: 0 20px;
+  height: 65%;
   border-radius: 40px;
   background-image: url("/images/arm-stories.png");
-  background-size: 190% 100%;
+  background-size: 100% 100%;
   background-position: right;
   background-repeat: no-repeat; 
   animation: slide-stories ease 1s .75s forwards;
@@ -75,7 +78,7 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(-25vh);
+    transform: translateY(0vh);
   }
 }
 @keyframes slide-prompts {
@@ -85,19 +88,19 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(-24vh);
+    transform: translateY(4vh);
   }
 }
 
 
 .bg-image {
   position: absolute;
-  top: 7%;
+  top: 65px;
   left: 0;
   height: 100vh;
   width: 100%;
   background-image: url("/images/home-supplies.png");
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
   z-index: -1;

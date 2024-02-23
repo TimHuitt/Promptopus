@@ -11,8 +11,8 @@
   padding: 0 1%;
 }
 .Header small {
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 .Header h1 {
-  transform: translateY(-12px);
+  transform: translateY(-8px);
 }

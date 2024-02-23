@@ -134,17 +134,6 @@ const Prompts: React.FC = () => {
               {prompts.map((prompt) => (
                 <Card prompt={ prompt } />
               ))}
-
-              <div className="refresh-container">
-                <button type="button" onClick={ handleSubmit }>
-                  <img src='/images/refresh.svg' />
-                </button>
-              </div>
-              <div className="back-container">
-                <button type="button" onClick={ handleBack }>
-                  <img src='/images/back.svg' />
-                </button>
-              </div>
             </div>
           </>
         ) : (
@@ -179,11 +168,30 @@ const Prompts: React.FC = () => {
                 > Words 
                 </button>
               </div>
-              <button type="button" onClick={ handleSubmit }>Generate Prompts!</button>
           </div>
         )}
       </div>
+      
       {/* {showPrompts ? <Timer /> : ''} */}
+
+      {!showPrompts ? (
+              <button className={styles["generate-button"]} type="button" onClick={ handleSubmit }>Generate Prompts!</button>
+      ) : (
+        
+        <>
+        <div className="refresh-container">
+          <button type="button" onClick={ handleSubmit }>
+            <img src='/images/refresh.svg' />
+          </button>
+        </div>
+        <div className="back-container">
+          <button type="button" onClick={ handleBack }>
+            <img src='/images/back.svg' />
+          </button>
+        </div>
+      </>
+      )}
+      
       <div className={styles["bg-image"]} />
     </>
   )
