@@ -38,10 +38,11 @@
   transform: translateY(100vh);
 }
 .prompts-text {
-  transform: translate(-10%, -100%) rotate(-15deg);
+  position: absolute;
+  top: 42%;
+  left: 10%;
 }
 .stories-text {
-  transform: translateY(-270%) rotate(14deg);
 }
 .stories {
   position: absolute;
