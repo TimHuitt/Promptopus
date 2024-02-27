@@ -117,8 +117,6 @@ const Prompts: React.FC = () => {
   const updateTheme = () => {
     setTheme(themeRef.current.value)
   }
-
-  console.log(prompts)
   
   return (
     <>
