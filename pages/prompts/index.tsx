@@ -10,7 +10,7 @@ import Data from './data.json'
 import Image from 'next/image'
 
 const Prompts: React.FC = () => {
-  const historyRef = useRef<string[]>(['whisper', 'whispering', 'gossamer', 'meadow', '&#x1F98B;', '&#x1F30D;', '&#x1F33F;', '&#x1F52B;'])
+  const historyRef = useRef<string[]>([])
   const countRef = useRef<HTMLSelectElement | null>(null)
   const themeRef = useRef<HTMLInputElement | null>(null)
   const [ promptType, setPromptType ] = useState<boolean>(true)
@@ -57,14 +57,14 @@ const Prompts: React.FC = () => {
       return;
     }
 
-    const rng = () => {
-      return Math.floor(Math.random() * 674)
+    const rng = (qty: number) => {
+      return Math.floor(Math.random() * qty)
     }
 
-    const getData = (data) => {
+    const getData = (data: string[], qty: number) => {
       let output: string[] = []
-      for (let i = 0; i < count; i++) {
-        output.push(data[rng()])
+      for (let i = 0; i < qty; i++) {
+        output.push(data[rng(qty)])
       }
       return(output)
     }
@@ -73,11 +73,11 @@ const Prompts: React.FC = () => {
     setDisabled(true)
 
     if (promptType) {
-      const emojis = getData(Data.emojis)
+      const emojis = getData(Data.emojis, 674)
       setPrompts(emojis)
       setDisabled(false)
     } else {
-      const words = getData(Data.words)
+      const words = getData(Data.words, 2500)
       setPrompts(words)
       setDisabled(false)
       // try {
