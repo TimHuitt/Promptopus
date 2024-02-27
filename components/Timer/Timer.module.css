@@ -27,6 +27,7 @@
   text-align: center;
   min-width: 30px;
   max-width: 60px;
+  max-height: 45px;
   border-radius: 15px;
   font-size: 2rem;
 }

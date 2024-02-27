@@ -17,3 +17,6 @@
 .Header h1 {
   transform: translateY(-8px);
 }
+.Header h4 {
+  margin: 0;
+}
