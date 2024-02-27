@@ -7,14 +7,12 @@ import Header from '../../components/Header'
 import styles from './prompts.module.css'
 import Data from './data.json'
 
-import Image from 'next/image'
-
 const Prompts: React.FC = () => {
   const historyRef = useRef<string[]>([])
   const countRef = useRef<HTMLSelectElement | null>(null)
   const themeRef = useRef<HTMLInputElement | null>(null)
   const [ promptType, setPromptType ] = useState<boolean>(true)
-  const [ count, setCount ] = useState<number>(4)
+  const [ count, setCount ] = useState<number>(3)
   const [ theme, setTheme ] = useState<string>('')
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
   const [ disabled, setDisabled ] = useState<boolean>(false)
@@ -22,7 +20,7 @@ const Prompts: React.FC = () => {
   
   const sendRequest = async (): Promise<any> => {
     // const url = "http://localhost:4000/prompts/prompts";
-    const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
+    // const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
     
     try {
       const res = await fetch(url, {
@@ -102,7 +100,7 @@ const Prompts: React.FC = () => {
   };
 
   const handleBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
-    setCount(4)
+    setCount(3)
     setShowPrompts(false)
   }
 
@@ -112,10 +110,6 @@ const Prompts: React.FC = () => {
 
   const updateCount = () => {
     setCount(parseInt(countRef.current.value))
-  }
-
-  const updateTheme = () => {
-    setTheme(themeRef.current.value)
   }
   
   return (
