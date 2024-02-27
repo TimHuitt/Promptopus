@@ -94,7 +94,6 @@ select {
 }
 .back-container button,
 .refresh-container button {
-  align-self: flex-end;
   margin: -1%;
   margin-right: 4%;
   padding: 2%;

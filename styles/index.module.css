@@ -76,7 +76,7 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(-10vh);
+    transform: translateY(-5vh);
   }
 }
 @keyframes slide-prompts {
@@ -86,44 +86,49 @@
   }
   100% {
     opacity: 1;
-    transform: translateY(-4vh);
+    transform: translateY(0vh);
   }
 }
-
+@keyframes slide-prompts-small {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-10vh);
+  }
+}
+@keyframes slide-stories-small {
+  0% {
+    opacity: 0;
+    transform: translateY(100vh);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(-5vh);
+  }
+}
 @media (max-height: 800px) {
   .prompts {
     height: 80%;
+    animation: slide-prompts-small ease 1s .75s forwards;
   }
   .stories {
     height: 80%;
+    animation: slide-stories-small ease 1s .75s forwards;
   }
-  @keyframes slide-prompts {
-    0% {
-      opacity: 0;
-      transform: translateY(100vh);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(-15vh);
-    }
-  }
-  @keyframes slide-stories {
-    0% {
-      opacity: 0;
-      transform: translateY(100vh);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(-5vh);
-    }
-  }
+}
+
+@media (max-width: 500px) {
+
 }
 
 .bg-image {
   position: fixed;
   top: 50px;
   left: 0;
-  height: 50%;
+  height: 25vh;
   width: 100%;
   background-image: url("/images/home-supplies.png");
   background-size: contain;

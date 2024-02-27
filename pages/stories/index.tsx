@@ -31,14 +31,14 @@ const Stories: React.FC = () => {
             </div>
             <div className={styles['refresh-container']}>
               <button type="button" onClick={ handleSubmit }>
-                <img src='/images/refresh.svg' />
+                <Image src='/images/refresh.svg' fill={true} alt={''} />
               </button>
             </div>
             <div className={styles['back-container']}>
               <form action="/prompts">
                 <input type="hidden" />
                 <button type="submit">
-                  <img src='/images/back.svg' />
+                  <Image src='/images/back.svg' fill={true} alt={''} />
                 </button>
               </form>
             </div>

@@ -1,6 +1,5 @@
 import { useState, useRef, useEffect, ChangeEvent } from 'react'
-import playSvg from '/play.svg'
-import pauseSvg from '/pause.svg'
+import Image from 'next/image'
 import styles from './Timer.module.css'
 
 const Timer: React.FC = () => {
@@ -8,6 +7,7 @@ const Timer: React.FC = () => {
   const [ minToggle, setMinToggle ] = useState<boolean>(true)
   const [ min, setMin ] = useState<number>(3)
   const [ sec, setSec ] = useState<number>(0)
+  const [ active, setActive ] = useState<boolean>(false)
   const minRef = useRef<number>(3)
   const secRef = useRef<number>(0)
 
@@ -51,6 +51,10 @@ const Timer: React.FC = () => {
     setMinToggle(prev => !prev)
   }
 
+  const toggleTimer = () => {
+    setActive(prevState => !prevState)
+  }
+
   useEffect(() => {
     let timer: NodeJS.Timeout | null = null;
 
@@ -78,39 +82,44 @@ const Timer: React.FC = () => {
   }, [play, min, sec])
 
   return (
-    <div className={styles.Timer}>
-      <div className={styles['timer-settings']}>
-        <div>
-          <input 
-            type="text" 
-            value={minToggle ? minRef.current : secRef.current } 
-            onChange={setTime}
-          />
+    <>
+      <div className={`${styles.Timer} ${active ? styles.active : ''}`}>
+        <div className={styles['timer-settings']}>
+          <div>
+            <input 
+              type="text" 
+              value={minToggle ? minRef.current : secRef.current } 
+              onChange={setTime}
+            />
+          </div>
+          <div className={styles['time-type']} onClick={handleType}>
+            <div className={styles['type-select']}>
+              { minToggle ? (
+                <h2>min</h2>
+              ) : (
+                <h2>sec</h2>
+              )}
+            </div>
+          </div>
         </div>
-        <div className={styles['time-type']} onClick={handleType}>
-          <div className={styles['type-select']}>
-            { minToggle ? (
-              <h2>min</h2>
-            ) : (
-              <h2>sec</h2>
-            )}
+        <div className={styles['timer-controls']} onClick={handleTimer}>
+          { play ? (
+            <Image src='/images/pause.svg' width={40} height={40} alt={''} />
+          ) : (
+            <Image src='/images/play.svg' width={40} height={40} alt={''} />
+          )}
+        </div>
+        <div className={styles['time-remaining']}>
+          <div className={styles.timer}>
+            <h1>{min}:{sec < 10 ? '0' + sec : sec}</h1>
+            {/* <small>remaining</small> */}
           </div>
         </div>
       </div>
-      <div className={styles['timer-controls']} onClick={handleTimer}>
-        { play ? (
-          <img src='/images/pause.svg' />
-        ) : (
-          <img src='/images/play.svg' />
-        )}
+      <div className={`${styles['toggle-button']} ${active ? styles['active-button'] : ''}`} onClick={toggleTimer}>
+        <div className={styles.clock}>&#x23F2;</div>
       </div>
-      <div className={styles['time-remaining']}>
-        <div className={styles.timer}>
-          <h1>{min}:{sec < 10 ? '0' + sec : sec}</h1>
-          <small>remaining</small>
-        </div>
-      </div>
-    </div>
+    </>
   )
 }
 export default Timer

@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import Link from 'next/link'
 import Head from 'next/head'
+import Image from 'next/image'
 import Card from '../../components/Card'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
@@ -22,29 +23,29 @@ const Prompts: React.FC = () => {
     // const url = "http://localhost:4000/prompts/prompts";
     // const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
     
-    try {
-      const res = await fetch(url, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ content:{
-          count: count,
-          theme: theme,
-          history: historyRef.current.join(',')
-        }}),
-      });
-
-
-      if (res.ok) {
-        const jsonData = await res.json();
-        return jsonData;
-      } else {
-        throw new Error("Invalid request!");
-      }
-    } catch (err) {
-      console.error(err.message);
-    }
+//     try {
+//       const res = await fetch(url, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//         },
+//         body: JSON.stringify({ content:{
+//           count: count,
+//           theme: theme,
+//           history: historyRef.current.join(',')
+//         }}),
+//       });
+// 
+// 
+//       if (res.ok) {
+//         const jsonData = await res.json();
+//         return jsonData;
+//       } else {
+//         throw new Error("Invalid request!");
+//       }
+//     } catch (err) {
+//       console.error(err.message);
+//     }
   };
 
   const handleSubmit = async () => {
@@ -165,21 +166,21 @@ const Prompts: React.FC = () => {
         )}
       </div>
       
-      {/* {showPrompts ? <Timer /> : ''} */}
+      {showPrompts ? <Timer /> : ''}
 
       {!showPrompts ? (
               <button className={styles["generate-button"]} type="button" onClick={ handleSubmit }>Generate Prompts!</button>
       ) : (
         
-        <>
+      <>
         <div className="refresh-container">
           <button type="button" onClick={ handleSubmit }>
-            <img src='/images/refresh.svg' />
+            <Image src='/images/refresh.svg' height={50} width={50} alt={''} />
           </button>
         </div>
         <div className="back-container">
           <button type="button" onClick={ handleBack }>
-            <img src='/images/back.svg' />
+            <Image src='/images/back.svg' height={50} width={50} alt={''} />
           </button>
         </div>
       </>

@@ -4,11 +4,15 @@
   justify-content: center;
   align-items: center;
   position: fixed;
-  top: 65px;
+  top: 0;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 50px;
   background-color: var(--timer-bg);
+  transition: .5s all;
+}
+.active {
+  top: 50px;
 }
 .Timer > div {
   display: flex;
@@ -35,4 +39,26 @@
   border-radius: 10px;
   padding: 0 5px;
   cursor: pointer;
+}
+.toggle-button {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-height: 35px;
+  border-radius: 0 0 0 10px;
+  border: 2px solid black;
+  border-top: 0 solid transparent;
+  border-right: 0 solid transparent;
+  background: rgb(122, 229, 251);
+  overflow: hidden;
+  transition: .5s all;
+}
+.active-button {
+  top: 100px;
+}
+.clock {
+  font-size: 3rem;
 }

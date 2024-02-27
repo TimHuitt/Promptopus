@@ -9,6 +9,7 @@
   height: 50px;
   background-color: var(--header-bg);
   padding: 1% 1% 0 1%;
+  z-index: 99;
 }
 .Header small {
   font-size: 1.2rem;
