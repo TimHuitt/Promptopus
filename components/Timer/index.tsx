@@ -112,12 +112,11 @@ const Timer: React.FC = () => {
         <div className={styles['time-remaining']}>
           <div className={styles.timer}>
             <h1>{min}:{sec < 10 ? '0' + sec : sec}</h1>
-            {/* <small>remaining</small> */}
           </div>
         </div>
       </div>
       <div className={`${styles['toggle-button']} ${active ? styles['active-button'] : ''}`} onClick={toggleTimer}>
-        <div className={styles.clock}>&#x23F2;</div>
+        <Image src='/images/timer.svg' width={30} height={30} alt={''} />
       </div>
     </>
   )

@@ -8,6 +8,7 @@
   left: 0;
   width: 100%;
   height: 50px;
+  box-shadow: 0 0px 0 1px black;
   background-color: var(--timer-bg);
   transition: .5s all;
 }
@@ -52,13 +53,10 @@
   border: 2px solid black;
   border-top: 0 solid transparent;
   border-right: 0 solid transparent;
-  background: rgb(122, 229, 251);
+  background: var(--timer-bg);
   overflow: hidden;
   transition: .5s all;
 }
 .active-button {
   top: 100px;
-}
-.clock {
-  font-size: 3rem;
 }
