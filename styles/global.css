@@ -21,6 +21,7 @@ html {
   justify-content: center;
   align-items: center;
   height: 100vh;
+  margin-bottom: env(safe-area-inset-bottom);
   background-image: url("/images/bg.png");
   background-size: cover;
   background-position: center;
