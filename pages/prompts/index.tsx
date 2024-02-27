@@ -63,7 +63,7 @@ const Prompts: React.FC = () => {
 
     const getData = (data: string[], qty: number) => {
       let output: string[] = []
-      for (let i = 0; i < qty; i++) {
+      for (let i = 0; i < count; i++) {
         output.push(data[rng(qty)])
       }
       return(output)
@@ -77,7 +77,7 @@ const Prompts: React.FC = () => {
       setPrompts(emojis)
       setDisabled(false)
     } else {
-      const words = getData(Data.words, 2500)
+      const words = getData(Data.words, 2465)
       setPrompts(words)
       setDisabled(false)
       // try {
