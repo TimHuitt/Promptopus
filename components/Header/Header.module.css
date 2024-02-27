@@ -6,9 +6,9 @@
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  height: 65px;
+  height: 50px;
   background-color: var(--header-bg);
-  padding: 0 1%;
+  padding: 1% 1% 0 1%;
 }
 .Header small {
   font-size: 1.2rem;
