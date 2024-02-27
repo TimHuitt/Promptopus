@@ -11,15 +11,15 @@
 .prompt-settings {
   position: relative;
   display: grid;
-  grid-template-columns: 1;
-  grid-template-rows: 7;
+  grid-template-columns: 100%;
+  grid-template-rows: 33% 33% 34%;
   justify-content: center;
   align-items: center;
   transform: translate(120%, -50%);
   width: 80vmin;
   max-width: 500px;
   height: 50%;
-  padding: 15% 0 10% 0;
+  padding: 5% 0 5% 0;
   margin-top: 50px;
   text-align: center;
   border-radius: 30px;

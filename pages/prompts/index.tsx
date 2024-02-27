@@ -141,17 +141,18 @@ const Prompts: React.FC = () => {
               <div className={styles["settings-header"]}>
                 <h1>Prompt Settings</h1>
               </div>
-              <label htmlFor="prompts-count">Number of Prompts:
-                <select id="prompts-count" name="prompts-count" defaultValue='4' ref={countRef} onChange={updateCount}>
+              <label htmlFor="prompts-count"><h1>Prompts:</h1>
+                <select id="prompts-count" name="prompts-count" defaultValue='3' ref={countRef} onChange={updateCount}>
                   <option>1</option>
                   <option>2</option>
                   <option>3</option>
                   <option>4</option>
                 </select>
               </label>
-              <label htmlFor="prompt-theme">Theme:
-                <input type="text" placeholder="(optional)" ref={themeRef} onChange={updateTheme}/>
-              </label>
+              {/* <div className="theme-label">
+                <label htmlFor="prompt-theme">Theme:</label>
+                <input name="prompt-theme" type="text" placeholder="(optional)" ref={themeRef} onChange={updateTheme}/>
+              </div> */}
               <div className={styles['type-selection']}>
                 <button 
                   type="button" 
