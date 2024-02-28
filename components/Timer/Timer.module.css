@@ -45,15 +45,17 @@
 .toggle-button {
   position: fixed;
   top: 50px;
-  right: 0;
+  right: 50%;
+  transform: translateX(50%);
   display: flex;
   justify-content: center;
   align-items: center;
   max-height: 35px;
-  border-radius: 0 0 0 10px;
+  border-radius: 0 0 10px 10px;
+  /* border-radius: 0 0 0 10px; */
   border: 2px solid black;
   border-top: 0 solid transparent;
-  border-right: 0 solid transparent;
+  /* border-right: 0 solid transparent; */
   background: var(--timer-bg);
   overflow: hidden;
   transition: .5s all;

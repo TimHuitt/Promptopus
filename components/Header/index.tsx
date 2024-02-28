@@ -24,3 +24,7 @@ const Header: React.FC = () => {
   )
 }
 export default Header
+
+// well hello there
+// Choose prompts or stories and draw the first thing that comes to mind.
+// Use your imagination and have fun being creative!
