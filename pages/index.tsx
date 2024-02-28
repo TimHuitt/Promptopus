@@ -5,10 +5,11 @@ import styles from '../styles/index.module.css'
 
 import bg from '../public/images/bg.jpg'
 import Header from '../components/Header'
-import Timer from '../components/Timer'
+import Help from '../components/Help'
 
 const Home: React.FC = () => {
   return (
+    <>
     <div className={styles.Home}>
       <Head>
         <title>a Doodling Promptopus</title>
@@ -31,6 +32,8 @@ const Home: React.FC = () => {
       </Link>
       <div className={styles["bg-image"]} />
     </div>
+    <Help />
+    </>
   );
 }
 
