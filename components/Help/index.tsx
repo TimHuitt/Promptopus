@@ -14,11 +14,13 @@ const Help: React.FC = () => {
     <>
       <div className={`${styles.Help} ${active ? styles.active : ''}`}>
         <h1>Well, Hello There!</h1>
-        <p>
+        <br />
+        <div>
           Choose prompts or stories and<br />
           Draw the first thing that comes to mind<br /><br />
           Use your <h5 className={styles['rainbow-text']}>imagination</h5><br />and have fun being creative!
-        </p>
+        </div>
+        <br />
         <small>
           All art by aDoodlingOctopus <br />
           <a href="https://www.adoodlingoctopus.com/" rel="noopener noreferrer">www.adoodlingoctopus.com</a>

@@ -88,6 +88,7 @@ const Timer: React.FC = () => {
           <div>
             <input 
               type="text" 
+              name="time-input"
               value={minToggle ? minRef.current : secRef.current } 
               onChange={setTime}
             />

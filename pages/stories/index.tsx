@@ -35,8 +35,8 @@ const Stories: React.FC = () => {
               </button>
             </div>
             <div className={styles['back-container']}>
-              <form action="/prompts">
-                <input type="hidden" />
+              <form action="/prompts" name="back">
+                <input type="hidden" name="hidden-input"/>
                 <button type="submit">
                   <Image src='/images/back.svg' fill={true} alt={''} />
                 </button>
@@ -56,7 +56,7 @@ const Stories: React.FC = () => {
                 </select>
               </label>
               <label htmlFor={styles['prompt-theme']}>Story Theme:
-                <input type="text" placeholder="(optional)"/>
+                <input type="text" name="theme-input" placeholder="(optional)"/>
               </label>
               <button type="button" onClick={ handleSubmit }>Generate Stories!</button>
             </form>

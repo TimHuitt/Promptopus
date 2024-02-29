@@ -11,10 +11,8 @@ import Data from './data.json'
 const Prompts: React.FC = () => {
   const historyRef = useRef<string[]>([])
   const countRef = useRef<HTMLSelectElement | null>(null)
-  const themeRef = useRef<HTMLInputElement | null>(null)
   const [ promptType, setPromptType ] = useState<boolean>(true)
   const [ count, setCount ] = useState<number>(3)
-  const [ theme, setTheme ] = useState<string>('')
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
   const [ disabled, setDisabled ] = useState<boolean>(false)
   const [ prompts, setPrompts ] = useState<string[]>([''])
@@ -63,7 +61,8 @@ const Prompts: React.FC = () => {
     const getData = (data: string[], qty: number) => {
       let output: string[] = []
       for (let i = 0; i < count; i++) {
-        output.push(data[rng(qty)])
+        let emoji = data[rng(qty)]
+        output.push(emoji)
       }
       return(output)
     }
@@ -142,10 +141,6 @@ const Prompts: React.FC = () => {
                   <option>4</option>
                 </select>
               </label>
-              {/* <div className="theme-label">
-                <label htmlFor="prompt-theme">Theme:</label>
-                <input name="prompt-theme" type="text" placeholder="(optional)" ref={themeRef} onChange={updateTheme}/>
-              </div> */}
               <div className={styles['type-selection']}>
                 <button 
                   type="button" 
@@ -167,25 +162,23 @@ const Prompts: React.FC = () => {
       </div>
       
       {showPrompts ? <Timer /> : ''}
-
       {!showPrompts ? (
-              <button className={styles["generate-button"]} type="button" onClick={ handleSubmit }>Generate Prompts!</button>
+        <button className="generate-button" type="button" onClick={ handleSubmit }>Generate Prompts!</button>
       ) : (
-        
-      <>
-        <div className="refresh-container">
-          <button type="button" onClick={ handleSubmit }>
-            <Image src='/images/refresh.svg' height={50} width={50} alt={''} />
-          </button>
+        <div className="button-container">
+          <div className="back-container">
+            <button type="button" onClick={ handleBack }>
+              <Image src='/images/back.svg' height={50} width={50} alt={''} />
+            </button>
+          </div>
+          <div className="refresh-container">
+            <button type="button" onClick={ handleSubmit }>
+              <Image src='/images/refresh.svg' height={50} width={50} alt={''} />
+            </button>
+          </div>
         </div>
-        <div className="back-container">
-          <button type="button" onClick={ handleBack }>
-            <Image src='/images/back.svg' height={50} width={50} alt={''} />
-          </button>
-        </div>
-      </>
       )}
-      
+
       <div className={styles["bg-image"]} />
     </>
   )

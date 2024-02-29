@@ -40,11 +40,6 @@ body {
   letter-spacing: 1.3px;
   overflow: hidden;
 }
-@media screen and (max-width: 480px) {
-  body {
-    
-  }
-}
 a {
   color: var(--font);
   text-decoration: none;
@@ -82,21 +77,39 @@ select {
   min-width: 500px;
   max-width: 700px;
 }
-
-.refresh-container {
+.generate-button {
   position: fixed;
-  right: 6%;
-  bottom: 2%;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 50%;
+  max-width: 300px;
+  padding: 2%;
+  font-size: 1.25rem;
+  background-color: rgb(15, 223, 105);
+  border: 2px solid rgb(150, 245, 150);
+  border-radius: 20px;
+  cursor: pointer;
 }
-.back-container {
+@media (min-width: 700px) {
+  .generate-button {
+    padding: 1%;
+  }
+}
+.button-container {
   position: fixed;
-  left: 6%;
   bottom: 2%;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 700px;
+  padding: 2% 5%;
 }
 .back-container button,
 .refresh-container button {
-  margin: -1%;
-  margin-right: 4%;
   padding: 2%;
   border-radius: 50%;
   cursor: pointer;

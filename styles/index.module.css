@@ -69,6 +69,17 @@
   top: 0;
   left: 0;
 }
+@media (max-height: 800px) {
+  .prompts {
+    height: 80%;
+    animation: slide-prompts-small ease 1s .75s forwards;
+  }
+  .stories {
+    height: 80%;
+    animation: slide-stories-small ease 1.5s .75s forwards;
+  }
+}
+
 @keyframes slide-stories {
   0% {
     opacity: 0;
@@ -109,17 +120,6 @@
     transform: translateY(-5vh);
   }
 }
-@media (max-height: 800px) {
-  .prompts {
-    height: 80%;
-    animation: slide-prompts-small ease 1s .75s forwards;
-  }
-  .stories {
-    height: 80%;
-    animation: slide-stories-small ease 1s .75s forwards;
-  }
-}
-
 @media (max-width: 500px) {
 
 }
