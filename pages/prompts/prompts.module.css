@@ -61,19 +61,11 @@
 .settings-header h1 {
   text-decoration: underline;
 }
-.prompt-settings form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  width: 100%;
-  /* padding-top: 10%; */
-}
 .prompt-settings label {
   display: flex;
   justify-content: center;
   align-items: center;
+  font-size: 1rem;
   gap: 10px;
   width: 100%;
 }
@@ -82,9 +74,6 @@
   padding: 2% 2%;
   border-radius: 15px;
   background: transparent;
-}
-.prompt-settings label {
-  font-size: 1rem;
 }
 .type-selection button {
   padding: 4%;
