@@ -30,6 +30,9 @@
   background-repeat: no-repeat; 
   animation: slide-prompt-settings ease 1s .25s forwards;
 }
+.prompt-settings {
+  padding: 20% 0;
+}
 .prompt-card {
   display: flex;
   flex-direction: column;
@@ -74,14 +77,11 @@
   gap: 10px;
   width: 100%;
 }
-.prompt-settings select,
-.prompt-settings input[type="text"] {
-  padding: 4% 2%;
+.prompt-settings select {
+  font-size: 2rem;
+  padding: 2% 2%;
   border-radius: 15px;
   background: transparent;
-}
-.prompt-settings input[type="text"] {
-  margin: 4% 0;
 }
 .prompt-settings label {
   font-size: 1rem;
@@ -113,33 +113,7 @@
   font-size: 2rem;
   margin-bottom: 2%;
 }
-@media (max-height: 768px) {
-  .Prompts {
-    font-size: .75rem;
-  }
-  .prompt-settings {
-    animation: slide-prompt-settings-small ease 1s .25s forwards;
-  }
-  /* .prompt-card {
-    transform: translate(0%, 0%);
-  } */
-  .prompt-settings button {
-    margin-top: 1%;
-    font-size: 1rem;
-  }
-  .prompt-settings h1 {
-    font-size: 1.5rem;
-  }
-  .prompt-settings select,
-  .prompt-settings input[type="text"] {
-    margin: 1%;
-    padding: 2% 2%;
-  }
-  .prompt-settings input[type="text"] {
-    padding-left: 8px;
-  }
-  
-}
+
 .type-selection {
   display: flex;
   flex-direction: row;
@@ -174,4 +148,28 @@
   background-position: top;
   background-repeat: no-repeat;
   z-index: -1;
+}
+
+@media (max-height: 768px) {
+  .Prompts {
+    font-size: .75rem;
+  }
+  .prompt-settings {
+    animation: slide-prompt-settings-small ease 1s .25s forwards;
+  }
+  /* .prompt-card {
+    transform: translate(0%, 0%);
+  } */
+  .prompt-settings button {
+    margin-top: 1%;
+    font-size: 1rem;
+  }
+  .prompt-settings h1 {
+    font-size: 1.5rem;
+  }
+  .prompt-settings select {
+    font-size: 1.5rem;
+    margin: 1%;
+    padding: 1% 1%;
+  }
 }
