@@ -20,7 +20,8 @@ const Help: React.FC = () => {
           Use your <h5 className={styles['rainbow-text']}>imagination</h5><br />and have fun being creative!
         </p>
         <small>
-          All art by aDoodlingOctopus <a href="https://www.adoodlingoctopus.com/" rel="noopener noreferrer">www.adoodlingoctopus.com</a>
+          All art by aDoodlingOctopus <br />
+          <a href="https://www.adoodlingoctopus.com/" rel="noopener noreferrer">www.adoodlingoctopus.com</a>
         </small>
         <button className={styles["generate-button"]} type="button" onClick={ toggleHelp }>Get Started!</button>
       </div>
