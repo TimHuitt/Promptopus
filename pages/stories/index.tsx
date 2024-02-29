@@ -77,6 +77,7 @@ const Stories: React.FC = () => {
 
   const handleBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
     setShowStories(false)
+    setDisabled(false)
   }
 
   const updateTheme = () => {
@@ -115,7 +116,7 @@ const Stories: React.FC = () => {
                 </select>
               </label>
               <div className={styles['stories-theme']}>
-                <div className="theme-label">
+                <div className="theme-input">
                   <label htmlFor="stories-theme">Theme:</label>
                   <input id="stories-theme" type="text" placeholder="(optional)" ref={themeRef} onChange={updateTheme}/>
                 </div>

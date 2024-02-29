@@ -22,8 +22,8 @@
   grid-template-columns: 100%;
   grid-template-rows: 33% 33% 34%;
   justify-content: center;
-  align-items: center;
-  width: 80vmin;
+  align-items: flex-start;
+  width: 85%;
   max-width: 500px;
   min-height: 50%;
   max-height: 50%;
@@ -36,14 +36,19 @@
   animation: slide-stories-settings ease 1s .25s forwards;
 }
 .stories-settings {
-  padding: 20% 0;
+  padding: 15% 0;
+  padding-left: 12%;
 }
 .stories-card {
+  left: -5%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 10% 0;
+  padding: 8% 0 0 10%;
+  padding-bottom: 15%;
+  font-size: 1.20rem;
+  animation: none;
 }
 .stories-settings label {
   display: flex;
@@ -58,14 +63,19 @@
   padding: 2% 2%;
   border-radius: 15px;
   background: transparent;
+  border: 2px solid black;
 }
 .settings-header h1 {
   text-decoration: underline;
 }
 .stories-text {
-  height: 100%;
   width: 65%;
   overflow-y: auto;
+}
+.stories-theme input[type="text"] {
+  padding: 2%;
+  border-radius: 10px;
+  border: 2px solid black;
 }
 .type-selection button {
   padding: 4%;
@@ -79,13 +89,10 @@
 }
 .stories-settings h1 {
   font-size: 2rem;
-  margin-bottom: 2%;
 }
 .stories-settings h2 {
   font-size: 1rem;
-  margin-bottom: 2%;
 }
-
 .bg-image {
   position: absolute;
   top: 50px;
@@ -104,7 +111,7 @@
     left: -100%;
   }
   100% {
-    left: 0;
+    left: -5%;
   }
 }
 
@@ -121,7 +128,7 @@
     font-size: 1.5rem;
   }
   .stories-settings select {
-    font-size: 1.5rem;
+    font-size: 1rem;
     margin: 1%;
     padding: 1% 1%;
   }
