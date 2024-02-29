@@ -6,7 +6,7 @@ import Card from '../../components/Card'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
 import styles from './stories.module.css'
-// import Data from './data.json'
+import Data from '../../public/data/data.json'
 
 const Stories: React.FC = () => {
   const themeRef = useRef<HTMLInputElement | null>(null)
@@ -21,6 +21,18 @@ const Stories: React.FC = () => {
     // const url = "http://localhost:4000/prompts/prompts"
     const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts"
     
+    const rng = () => {
+      return Math.floor(Math.random() * Data.themes.length)
+    }
+
+    const getTheme = () => {
+      return(Data.themes[rng()])
+    }
+
+    const currentTheme = theme || getTheme()
+    
+
+
     try {
       const res = await fetch(url, {
         method: 'POST',
@@ -29,12 +41,13 @@ const Stories: React.FC = () => {
         },
         body: JSON.stringify({ content:{
           length: length,
-          theme: theme,
+          theme: currentTheme,
         }}),
       });
 
       if (res.ok) {
         const resData = await res.json();
+        //     historyRef.current.push(...response)
         return resData.story;
       } else {
         throw new Error("Invalid request!");
@@ -48,6 +61,7 @@ const Stories: React.FC = () => {
     setStory('Loading...')
     
     if (disabled) {
+      setStory('Please wait for the current request.');
       console.error('Please wait for the current request.');
       return;
     }
@@ -61,7 +75,7 @@ const Stories: React.FC = () => {
       if (resData) {
         setStory(resData)
       } else {
-        console.log('no data')
+        setStory('Communication Error. Try Again.')
       }
     } catch (err) {
       console.log(err);

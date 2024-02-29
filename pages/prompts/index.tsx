@@ -6,7 +6,7 @@ import Card from '../../components/Card'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
 import styles from './prompts.module.css'
-import Data from './data.json'
+import Data from '../../public/data/data.json'
 
 const Prompts: React.FC = () => {
   const historyRef = useRef<string[]>([])
@@ -16,35 +16,6 @@ const Prompts: React.FC = () => {
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
   const [ disabled, setDisabled ] = useState<boolean>(false)
   const [ prompts, setPrompts ] = useState<string[]>([''])
-  
-  const sendRequest = async (): Promise<any> => {
-    // const url = "http://localhost:4000/prompts/prompts";
-    // const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
-    
-//     try {
-//       const res = await fetch(url, {
-//         method: 'POST',
-//         headers: {
-//           'Content-Type': 'application/json',
-//         },
-//         body: JSON.stringify({ content:{
-//           count: count,
-//           theme: theme,
-//           history: historyRef.current.join(',')
-//         }}),
-//       });
-// 
-// 
-//       if (res.ok) {
-//         const jsonData = await res.json();
-//         return jsonData;
-//       } else {
-//         throw new Error("Invalid request!");
-//       }
-//     } catch (err) {
-//       console.error(err.message);
-//     }
-  };
 
   const handleSubmit = async () => {
     setPrompts(['Loading...'])
@@ -78,25 +49,8 @@ const Prompts: React.FC = () => {
       const words = getData(Data.words, 2465)
       setPrompts(words)
       setDisabled(false)
-      // try {
-      //   const resData = await sendRequest();
-      //   
-      //   if (resData) {
-      //     let response = typeof resData.response === 'string' 
-      //       ? JSON.parse(resData.response)
-      //       : resData.response
-      //     response = Object.values(response)
-      //     historyRef.current.push(...response)
-      //     setPrompts(response)
-      //   } else {
-      //     console.log('no data')
-      //   }
-      // } catch (err) {
-      //   console.log(err);
-      // } finally {
-      //   setDisabled(false)
-      // }
     }
+    //historyRef.current.push(...response)
   };
 
   const handleBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
