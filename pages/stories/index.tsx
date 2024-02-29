@@ -18,8 +18,8 @@ const Stories: React.FC = () => {
   const [ story, setStory ] = useState<string>('')
   
   const sendRequest = async (): Promise<any> => {
-    const url = "http://localhost:4000/prompts/prompts";
-    // const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
+    // const url = "http://localhost:4000/prompts/prompts"
+    const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts"
     
     try {
       const res = await fetch(url, {
