@@ -12,14 +12,14 @@ const Stories: React.FC = () => {
   const themeRef = useRef<HTMLInputElement | null>(null)
   const lengthRef = useRef<HTMLSelectElement | null>(null)
   const [ theme, setTheme ] = useState<string>('')
-  const [ length, setLength ] = useState<string>('')
+  const [ length, setLength ] = useState<string>('Short')
   const [ showStories, setShowStories ] = useState<boolean>(false)
   const [ disabled, setDisabled ] = useState<boolean>(false)
-  const [ story, setStory ] = useState<string[]>([''])
+  const [ story, setStory ] = useState<string>('')
   
   const sendRequest = async (): Promise<any> => {
-    // const url = "http://localhost:4000/prompts/prompts";
-    const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
+    const url = "http://localhost:4000/prompts/prompts";
+    // const url = "https://code-challenger-server-9e5cc705b6e9.herokuapp.com/prompts/prompts";
     
     try {
       const res = await fetch(url, {
@@ -33,10 +33,9 @@ const Stories: React.FC = () => {
         }}),
       });
 
-
       if (res.ok) {
-        const jsonData = await res.json();
-        return jsonData;
+        const resData = await res.json();
+        return resData.story;
       } else {
         throw new Error("Invalid request!");
       }
@@ -46,7 +45,7 @@ const Stories: React.FC = () => {
   };
 
   const handleSubmit = async () => {
-    setStory(['Loading...'])
+    setStory('Loading...')
     
     if (disabled) {
       console.error('Please wait for the current request.');
@@ -56,26 +55,24 @@ const Stories: React.FC = () => {
     setShowStories(true)
     setDisabled(true)
 
-    // try {
-    //   const resData = await sendRequest();
-    //   
-    //   if (resData) {
-    //     let response = typeof resData.response === 'string' 
-    //       ? JSON.parse(resData.response)
-    //       : resData.response
-    //     response = Object.values(response)
-    //     setStory(response)
-    //   } else {
-    //     console.log('no data')
-    //   }
-    // } catch (err) {
-    //   console.log(err);
-    // } finally {
-    //   setDisabled(false)
-    // }
+    try {
+      const resData = await sendRequest();
+      
+      if (resData) {
+        setStory(resData)
+      } else {
+        console.log('no data')
+      }
+    } catch (err) {
+      console.log(err);
+    } finally {
+      setDisabled(false)
+    }
   };
 
   const handleBack = (e: React.MouseEvent<HTMLButtonElement, MouseEvent>) => {
+    setLength('Short')
+    setTheme('')
     setShowStories(false)
     setDisabled(false)
   }
@@ -99,7 +96,7 @@ const Stories: React.FC = () => {
           <>
             <div className={styles['stories-card']}>
               <div className={styles["stories-text"]}>
-                In the heart of a dense forest, a single, glowing flower bloomed under the moon's tender gaze. A wandering fox, drawn by its light, whispered a wish into the night, and for a fleeting moment, the forest hummed with a magic unseen. In the heart of a dense forest, a single, glowing flower bloomed under the moon's tender gaze. A wandering fox, drawn by its light, whispered a wish into the night, and for a fleeting moment, the forest hummed with a magic unseen. In the heart of a dense forest, a single, glowing flower bloomed under the moon's tender gaze. A wandering fox, drawn by its light, whispered a wish into the night, and for a fleeting moment, the forest hummed with a magic unseen.
+                {story}
               </div>
             </div>
           </>
