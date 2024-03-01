@@ -106,6 +106,7 @@ select {
   width: 100%;
   max-width: 700px;
   padding: 2% 5%;
+  z-index: 3;
 }
 .back-container button,
 .refresh-container button {
