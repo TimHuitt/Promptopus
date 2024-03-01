@@ -55,7 +55,7 @@ const Home: React.FC = () => {
                 <div className={styles.prompts}>
                   <NextImage 
                       src={promptArm}
-                      placeholder="blur"
+                      // placeholder="blur"
                       fill
                       sizes="100%"
                       alt={''} 
@@ -70,7 +70,7 @@ const Home: React.FC = () => {
                 <div className={styles.stories}>
                   <NextImage 
                       src={storyArm}
-                      placeholder="blur"
+                      // placeholder="blur"
                       fill
                       sizes="100%"
                       alt={''} 
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
             <div className={styles["bg-image"]}>
               <NextImage 
                   src={bg}
-                  placeholder="blur"
+                  // placeholder="blur"
                   fill
                   sizes="100vw"
                   alt={''} 
