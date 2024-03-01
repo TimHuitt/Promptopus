@@ -8,6 +8,8 @@ import Header from '../../components/Header'
 import styles from './prompts.module.css'
 import Data from '../../public/data/data.json'
 
+import globalBG from '../../public/images/bg.png'
+
 const Prompts: React.FC = () => {
   const historyRef = useRef<string[]>([])
   const countRef = useRef<HTMLSelectElement | null>(null)
@@ -134,6 +136,19 @@ const Prompts: React.FC = () => {
       )}
 
       <div className={styles["bg-image"]} />
+      <div 
+          style={{ 
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            backgroundImage: `url(${globalBG.src})`,
+            backgroundSize: '100% 100%',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%',
+            zIndex: '-1',
+          }}
+      />
     </>
   )
 }

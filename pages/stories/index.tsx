@@ -8,6 +8,8 @@ import Header from '../../components/Header'
 import styles from './stories.module.css'
 import Data from '../../public/data/data.json'
 
+import globalBG from '../../public/images/bg.png'
+
 const Stories: React.FC = () => {
   const themeRef = useRef<HTMLInputElement | null>(null)
   const lengthRef = useRef<HTMLSelectElement | null>(null)
@@ -155,6 +157,9 @@ const Stories: React.FC = () => {
         </div>
       )}
 
+      <div>
+        <Image src={globalBG.src} fill={true} alt={''} style={{zIndex: '-1'}}/>
+      </div>
     </>
   )
 }

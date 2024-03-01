@@ -11,6 +11,7 @@
   box-shadow: 0 0px 0 1px black;
   background-color: var(--timer-bg);
   transition: .5s all;
+  z-index: 2;
 }
 .active {
   top: 50px;
@@ -59,6 +60,7 @@
   background: var(--timer-bg);
   overflow: hidden;
   transition: .5s all;
+  z-index: 3;
 }
 .active-button {
   top: 100px;

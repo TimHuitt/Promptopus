@@ -13,6 +13,7 @@
   background-color: var(--help-bg);
   transition: .5s all;
   box-shadow: 0 0 10px rgb(65, 65, 65);
+  z-index: 2;
 }
 .active {
   top: 50px;

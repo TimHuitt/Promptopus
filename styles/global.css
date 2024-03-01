@@ -22,10 +22,7 @@ html {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background-image: url("/images/bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: repeat;
+  width: 100vw;
   font-size: 14px;
 }
 body {
@@ -38,6 +35,7 @@ body {
   font-size: 16px;
   font-family: "Fredoka", sans-serif;
   letter-spacing: 1.3px;
+  background-color: rgb(182, 173, 242);
   overflow: hidden;
 }
 a {
@@ -90,6 +88,7 @@ select {
   border: 2px solid rgb(150, 245, 150);
   border-radius: 20px;
   cursor: pointer;
+  z-index: 2;
 }
 @media (min-width: 700px) {
   .generate-button {

@@ -27,6 +27,7 @@
   background-size: 100% 100%;
   background-repeat: no-repeat; 
   animation: slide-prompt-settings ease 1s .25s forwards;
+  z-index: 2;
 }
 .prompt-settings {
   padding: 20% 0;
@@ -123,7 +124,7 @@
   background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
-  z-index: -1;
+  z-index: 1;
 }
 
 @media (max-height: 768px) {
