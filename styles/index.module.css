@@ -7,122 +7,71 @@
   width: 100%;
   height: 100%;
 }
-.prompt-choices {
+.menu-container {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  height: 90%;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-.prompt-choices a {
-  border-radius: 30%;
-}
-.prompt-choices a:active {
-  filter: brightness(75%)
+  max-width: 500px;
+  transform: translateX(-50%);
 }
 .prompts {
   position: absolute;
-  top: 40%;
+  /* bottom: -150%; */
+  bottom: 0;
   left: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 70%;
-  background-image: url("/images/arm-prompts.png");
-  background-size: 100% 100%;
-  background-position: left;
-  background-repeat: no-repeat; 
   animation: slide-prompts ease 1s .50s forwards;
-  transform: translateY(100vh);
+  /* transform: translateY(100vh); */
 }
 .prompts-text {
   position: absolute;
   top: 14%;
   left: 50%;
-  transform: translateX(-55%) rotate(-14deg);
-}
-.stories-text {
-  position: absolute;
-  top: 12%;
-  left: 50%;
-  transform: translateX(-50%) rotate(15deg);
+  transform: translateX(-55%) rotate(-12deg);
 }
 .stories {
   position: absolute;
-  top: 40%;
+  bottom: 0;
+  /* bottom: -150%; */
   right: 0;
   display: flex;
   justify-content: center;
   align-items: center;
   width: 50%;
   height: 75%;
-  background-image: url("/images/arm-stories.png");
-  background-size: 100% 100%;
-  background-position: right;
-  background-repeat: no-repeat; 
   animation: slide-stories ease 1s .75s forwards;
-  transform: translateY(100vh);
+  /* transform: translateY(100vh); */
 }
-.stories::after {
-  content: "";
+.stories-text {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 12%;
+  left: 50%;
+  transform: translateX(-50%) rotate(13deg);
 }
-@media (max-height: 800px) {
-  .prompts {
-    height: 80%;
-    animation: slide-prompts-small ease 1s .75s forwards;
+
+/* @keyframes slide-prompts {
+  0% {
+    bottom: -150%;
   }
-  .stories {
-    height: 80%;
-    animation: slide-stories-small ease 1.5s .75s forwards;
+  100% {
+    bottom: 0;
   }
 }
 
 @keyframes slide-stories {
   0% {
-    opacity: 0;
-    transform: translateY(100vh);
+    bottom: -150%;
   }
   100% {
-    opacity: 1;
-    transform: translateY(-5vh);
+    bottom: -10%;
   }
-}
-@keyframes slide-prompts {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(0vh);
-  }
-}
-@keyframes slide-prompts-small {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-10vh);
-  }
-}
-@keyframes slide-stories-small {
-  0% {
-    opacity: 0;
-    transform: translateY(100vh);
-  }
-  100% {
-    opacity: 1;
-    transform: translateY(-5vh);
-  }
-}
-@media (max-width: 500px) {
-
-}
+} */
 
 .bg-image {
   position: fixed;
@@ -130,16 +79,5 @@
   left: 0;
   height: 25vh;
   width: 100%;
-  background-image: url("/images/home-supplies.png");
-  background-size: contain;
-  background-position: top;
-  background-repeat: no-repeat;
   z-index: -1;
 }
-
-/* .prompts {
-  transform: translate(-5%, -10%) rotate(-13deg);
-}
-.stories {
-  transform: translate(-10%, -100%) rotate(10deg);
-} */
