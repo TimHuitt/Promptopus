@@ -1,6 +1,34 @@
 .Loading {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  font-size: 3rem;
+  background-color: var(--bg);
+  z-index: 9999;
+}
+.loading-bar-container {
+  width: 100%; /* Full width of the container */
+  background-color: #e0e0e0; /* Light grey background */
+  border-radius: 5px; /* Rounded corners */
+  overflow: hidden; /* Ensures the inner bar doesn't go outside the container */
+}
+
+.loading-bar {
+  height: 20px; /* Height of the loading bar */
+  width: 0%; /* Initial width of the loading bar */
+  background-color: #007bff; /* Blue background */
+  animation: loading 3s ease-in-out infinite; /* Adjust '3s' to control the speed */
+  border-radius: 5px; /* Rounded corners */
+}
+
+/* Keyframes for the loading animation */
+@keyframes loading {
+  0% { width: 0%; }
+  50% { width: 50%; }
+  100% { width: 100%; }
 }

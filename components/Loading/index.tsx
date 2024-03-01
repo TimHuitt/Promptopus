@@ -7,6 +7,10 @@ const Loading: React.FC = () => {
   return (
     <div className={styles.Loading}>
       <p>Loading...</p>
+
+      <div className="loading-bar-container">
+        <div className="loading-bar"></div>
+      </div>
     </div>
   )
 }

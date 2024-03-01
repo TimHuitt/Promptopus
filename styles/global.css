@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Fredoka&display=swap');
 
 :root {
-  --bg: rgb(174, 167, 220);
+  --bg: rgb(182, 173, 242);
   --header-bg: rgb(68, 210, 144);
   --timer-bg: rgba(80, 225, 235, 0.854);
   --help-bg: rgba(80, 225, 235, 0.981);
@@ -35,7 +35,7 @@ body {
   font-size: 16px;
   font-family: "Fredoka", sans-serif;
   letter-spacing: 1.3px;
-  background-color: rgb(182, 173, 242);
+  background-color: var(--bg);
   overflow: hidden;
 }
 a {

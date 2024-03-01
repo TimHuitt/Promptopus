@@ -1,4 +1,4 @@
-import { useState, useRef, useEffect, ChangeEvent } from 'react'
+import { useState } from 'react'
 import Image from 'next/image'
 import styles from './Help.module.css'
 
@@ -23,7 +23,7 @@ const Help: React.FC = () => {
         <br />
         <small>
           All art by aDoodlingOctopus <br />
-          <a href="https://www.adoodlingoctopus.com/" rel="noopener noreferrer">www.adoodlingoctopus.com</a>
+          <a target="_blank" href="https://www.adoodlingoctopus.com/" rel="noopener noreferrer">www.adoodlingoctopus.com</a>
         </small>
         <button className={styles["generate-button"]} type="button" onClick={ toggleHelp }>Get Started!</button>
       </div>

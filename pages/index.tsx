@@ -15,6 +15,8 @@ import promptArm from '../public/images/arm-prompts.png'
 
 const Home: React.FC = () => {
   const [ loaded, setLoaded ] = useState<boolean>(false)
+  const [ showOverlay, setShowOverlay ] = useState<boolean>(true)
+
   const images = [
     '/images/bg.png',
     '/images/home-supplies.png',
@@ -39,10 +41,23 @@ const Home: React.FC = () => {
     })
   }, [])
 
+  useEffect(() => {
+    if (loaded) {
+      const timer = setTimeout(() => {
+        setShowOverlay(false)
+      }, 1000)
+
+      return () => clearTimeout(timer)
+    }
+  }, [loaded]);
+
   return (
     <>
       {!loaded ? <Loading /> : (
         <>
+          <div className={styles.overlay} style={{display: showOverlay ? 'flex' : 'none'}}>
+            <p>Loading...</p>
+          </div>
           <Header />
           <div className={styles.Home}>
             <Head>
@@ -55,7 +70,7 @@ const Home: React.FC = () => {
                 <div className={styles.prompts}>
                   <NextImage 
                       src={promptArm}
-                      // placeholder="blur"
+                      placeholder="blur"
                       fill
                       sizes="100%"
                       alt={''} 
@@ -70,7 +85,7 @@ const Home: React.FC = () => {
                 <div className={styles.stories}>
                   <NextImage 
                       src={storyArm}
-                      // placeholder="blur"
+                      placeholder="blur"
                       fill
                       sizes="100%"
                       alt={''} 
@@ -85,7 +100,7 @@ const Home: React.FC = () => {
             <div className={styles["bg-image"]}>
               <NextImage 
                   src={bg}
-                  // placeholder="blur"
+                  placeholder="blur"
                   fill
                   sizes="100vw"
                   alt={''} 
