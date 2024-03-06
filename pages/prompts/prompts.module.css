@@ -33,7 +33,7 @@
   padding: 20% 0;
 }
 .prompt-card {
-  display: flex;
+  display: none;
   flex-direction: column;
   justify-content: center;
   align-items: center;
@@ -49,14 +49,6 @@
   }
   100% {
     transform: translate(0%, 10%);
-  }
-}
-@keyframes slide-prompt-settings-small {
-  0% {
-    transform: translate(120%, -50%);
-  }
-  100% {
-    transform: translate(0, 10%);
   }
 }
 
@@ -132,12 +124,6 @@
   .Prompts {
     font-size: .75rem;
   }
-  .prompt-settings {
-    animation: slide-prompt-settings-small ease 1s .25s forwards;
-  }
-  /* .prompt-card {
-    transform: translate(0%, 0%);
-  } */
   .prompt-settings button {
     margin-top: 1%;
     font-size: 1rem;
