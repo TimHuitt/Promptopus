@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './Header.module.css'
+import Login from '../../components/Login'
 
 const Header: React.FC = () => {
   const pathname = usePathname()
@@ -13,6 +14,7 @@ const Header: React.FC = () => {
           <h1>Promptopus</h1>
         </div>
       </Link>
+      <Login />
       { pathname !== "/" ? (
         <Link href="/">
             <h4>Home</h4>
