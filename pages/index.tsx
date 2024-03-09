@@ -31,9 +31,7 @@ const Home: React.FC = () => {
       const img = new Image()
       img.onload = () => {
         imagesLoaded++
-        console.log(`Loaded ${src}`); // Debugging line
         if (imagesLoaded === images.length) {
-          console.log('All images loaded'); // Debugging line
           setLoaded(true)
         }
       }
@@ -43,11 +41,11 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     if (loaded) {
-      const timer = setTimeout(() => {
+      const timeout = setTimeout(() => {
         setShowOverlay(false)
       }, 1000)
 
-      return () => clearTimeout(timer)
+      return () => clearTimeout(timeout)
     }
   }, [loaded]);
 
