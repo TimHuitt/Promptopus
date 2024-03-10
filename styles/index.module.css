@@ -88,11 +88,16 @@
   background-color: var(--bg);
   z-index: 9999;
 }
+
 .bg-image {
-  position: fixed;
+  position: absolute;
   top: 50px;
   left: 0;
   height: 25vh;
-  width: 100%;
+  width: 110%;
+  background-image: url("/images/home-supplies.png");
+  background-size: contain;
+  background-position: top;
+  background-repeat: no-repeat;
   z-index: 1;
 }
