@@ -15,13 +15,15 @@ const Header: React.FC = () => {
         </div>
       </Link>
       <div className={styles.links}>
-        <div className={styles.signup}>
+        <div className={`${styles.signup} buttons`}>
           Sign Up
         </div>
         <Login />
         { pathname !== "/" ? (
           <Link href="/">
+            <div className={`${styles.home} buttons`}>
               <h4>Home</h4>
+            </div>
           </Link>
         ) : (
           ''
