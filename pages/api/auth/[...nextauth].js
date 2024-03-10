@@ -3,21 +3,20 @@ import GoogleProvider from 'next-auth/providers/Google'
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const options = {
-  // pages: {
-  //   signIn: '/auth/signin',
-  // },
+  pages: {
+    signIn: '../../signin',
+  },
+  theme: {
+    brandColor: '#fcba03',
+    buttonText: '#fff',
+  },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
       clientSecret: process.env.GOOGLE_SECRET,
     }),
     CredentialsProvider({
-      // The name to display on the sign in form (e.g. "Sign in with...")
       name: "Email",
-      // `credentials` is used to generate a form on the sign in page.
-      // You can specify which fields should be submitted, by adding keys to the `credentials` object.
-      // e.g. domain, username, password, 2FA token, etc.
-      // You can pass any HTML attribute to the <input> tag through the object.
       credentials: {
         email: { label: "Email", type: "text" },
         password: { label: "Password", type: "password" }
