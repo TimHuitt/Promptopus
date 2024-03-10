@@ -19,7 +19,7 @@ export default function signin({
         {Object.values(providers).map((provider) => (
           provider.name === 'Google' ? (
             <div key={provider.name} className={styles.google}>
-              <button className={styles['gsi-material-button']}>
+              <button className={styles['gsi-material-button']} onClick={() => signIn(provider.id)}>
                 <div className={styles['gsi-material-button-state']}></div>
                 <div className={styles['gsi-material-button-content-wrapper']}>
                   <div className={styles['gsi-material-button-icon']}>
@@ -30,11 +30,11 @@ export default function signin({
                       <path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path>
                       <path fill="none" d="M0 0h48v48H0z"></path>
                     </svg>
-                    </div>
-                    <span className={styles['gsi-material-button-contents']}>Continue with Google</span>
-                    <span style={{ display: 'none' }}>Continue with Google</span>
                   </div>
-                </button>
+                  <span className={styles['gsi-material-button-contents']}>Continue with Google</span>
+                  <span style={{ display: 'none' }}>Continue with Google</span>
+                </div>
+              </button>
             </div>
           ) : provider.name === 'Email' ? (
             <div key={provider.name}>

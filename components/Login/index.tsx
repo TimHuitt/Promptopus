@@ -5,10 +5,14 @@ export default function Component() {
   const { data: session } = useSession()
   if (session) {
     return (
+      <>
       <div className={`${styles.Login} buttons`}>
-        {session.user.email} <br />
         <div onClick={() => signOut()}>Sign Out</div>
       </div>
+      <div className={styles.email}>
+        Signed in as {session.user.email}
+      </div>
+      </>
     )
   }
   return (

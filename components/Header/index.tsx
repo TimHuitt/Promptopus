@@ -15,10 +15,6 @@ const Header: React.FC = () => {
         </div>
       </Link>
       <div className={styles.links}>
-        <div className={`${styles.signup} buttons`}>
-          Sign Up
-        </div>
-        <Login />
         { pathname !== "/" ? (
           <Link href="/">
             <div className={`${styles.home} buttons`}>
@@ -26,7 +22,7 @@ const Header: React.FC = () => {
             </div>
           </Link>
         ) : (
-          ''
+          <Login />
         )}
       </div>
     </div>

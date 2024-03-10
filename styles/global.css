@@ -2,6 +2,7 @@
 
 :root {
   --bg: rgb(182, 173, 242);
+  --bg-alpha: rgba(182, 173, 242, 0.66);
   --header-bg: rgb(68, 210, 144);
   --timer-bg: rgba(80, 225, 235, 0.854);
   --help-bg: rgba(161, 231, 255, 0.981);
