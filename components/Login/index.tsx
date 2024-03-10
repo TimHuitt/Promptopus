@@ -7,14 +7,14 @@ export default function Component() {
     return (
       <div className={styles.Login}>
         {session.user.email} <br />
-        <button onClick={() => signOut()}>Sign out</button>
+        <div onClick={() => signOut()}>Sign Out</div>
       </div>
     )
   }
   return (
     <div className={styles.Login}>
       {/* Not signed in <br /> */}
-      <button onClick={() => signIn()}>Sign in</button>
+      <div onClick={() => signIn()}>Sign In</div>
     </div>
   )
 }

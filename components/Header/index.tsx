@@ -9,19 +9,24 @@ const Header: React.FC = () => {
   return (
     <div className={styles.Header}>
       <Link href="/">
-        <div className="title">
+        <div className={styles.title}>
           <small>a Doodling</small>
           <h1>Promptopus</h1>
         </div>
       </Link>
-      <Login />
-      { pathname !== "/" ? (
-        <Link href="/">
-            <h4>Home</h4>
-        </Link>
-      ) : (
-        ''
-      )}
+      <div className={styles.links}>
+        <div className={styles.signup}>
+          Sign Up
+        </div>
+        <Login />
+        { pathname !== "/" ? (
+          <Link href="/">
+              <h4>Home</h4>
+          </Link>
+        ) : (
+          ''
+        )}
+      </div>
     </div>
   )
 }

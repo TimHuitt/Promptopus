@@ -8,7 +8,7 @@
   width: 100%;
   height: 50px;
   background-color: var(--header-bg);
-  padding: 1% 1% 0 1%;
+  padding: 0 1%;
   z-index: 99;
 }
 .Header small {
@@ -17,6 +17,24 @@
 .Header h1 {
   transform: translateY(-8px);
 }
+@media (max-width: 430px) {
+  .Header h1 {
+    font-size: 1.5rem;
+  }
+  .Header small {
+    font-size: .75rem;
+  }
+}
 .Header h4 {
   margin: 0;
+}
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+}
+.title {
+  transform: translateY(5px);
 }

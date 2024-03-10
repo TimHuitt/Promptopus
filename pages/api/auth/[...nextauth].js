@@ -3,9 +3,9 @@ import GoogleProvider from 'next-auth/providers/Google'
 import CredentialsProvider from "next-auth/providers/credentials";
 
 export const options = {
-  pages: {
-    signIn: '/auth/signin',
-  },
+  // pages: {
+  //   signIn: '/auth/signin',
+  // },
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
