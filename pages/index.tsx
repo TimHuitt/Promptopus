@@ -95,21 +95,8 @@ const Home: React.FC = () => {
                 </div>
               </Link>
             </div>
-            <div className={styles["bg-image"]}>
-              <NextImage 
-                  src={bg}
-                  placeholder="blur"
-                  fill
-                  sizes="100vw"
-                  alt={''} 
-                  style={{
-                    objectFit: 'contain',
-                    objectPosition: 'top',
-                        overflow: 'visible',
-                    zIndex: -1
-                  }} 
-              />
-            </div>
+            <div className={styles["bg-image"]} />
+              
           </div>
           <Help />
           <div>

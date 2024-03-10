@@ -13,6 +13,6 @@
   width: 100vw;
   height: 12px;
   text-align: right;
-  background-color: var(--bg);
+  background-color: var(--bg-alpha);
   font-size: .75rem;
 }
