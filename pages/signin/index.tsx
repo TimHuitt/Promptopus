@@ -8,6 +8,8 @@ import authOptions from "../api/auth/[...nextauth]"
 
 import styles from './signin.module.css'
 
+import globalBG from '../../public/images/bg.png'
+
 export default function signin({
   providers,
 }: InferGetServerSidePropsType<typeof getServerSideProps>) {
@@ -36,19 +38,35 @@ export default function signin({
             </div>
           ) : provider.name === 'Email' ? (
             <div key={provider.name}>
+              <div className={styles.or}>or</div>
               <form>
                 Email: <input type="text" id="email" name="email"/>
                 Password: <input type="text" id="password" name="password"/>
               </form>
               <div className={`${styles.email} buttons`} onClick={() => signIn(provider.id)}>
-                Sign in with {provider.name}
+                Continue with {provider.name}
               </div>
             </div>
           ) : (
             ''
           )
         ))}
+        <a href="/">Cancel</a>
       </div>
+      <div className={styles["bg-image"]} />
+      <div 
+          style={{ 
+            position: 'absolute',
+            top: '0',
+            left: '0',
+            backgroundImage: `url(${globalBG.src})`,
+            backgroundSize: '100% 100%',
+            backgroundRepeat: 'no-repeat',
+            width: '100%',
+            height: '100%',
+            zIndex: '-1',
+          }}
+      />
     </div>
   )
 }
