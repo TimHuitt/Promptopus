@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import styles from './Header.module.css'
+import Login from '../../components/Login'
 
 const Header: React.FC = () => {
   const pathname = usePathname()
@@ -8,18 +9,22 @@ const Header: React.FC = () => {
   return (
     <div className={styles.Header}>
       <Link href="/">
-        <div className="title">
+        <div className={styles.title}>
           <small>a Doodling</small>
           <h1>Promptopus</h1>
         </div>
       </Link>
-      { pathname !== "/" ? (
-        <Link href="/">
-            <h4>Home</h4>
-        </Link>
-      ) : (
-        ''
-      )}
+      <div className={styles.links}>
+        { pathname !== "/" ? (
+          <Link href="/">
+            <div className={`${styles.home} buttons`}>
+              <h4>Home</h4>
+            </div>
+          </Link>
+        ) : (
+          <Login />
+        )}
+      </div>
     </div>
   )
 }

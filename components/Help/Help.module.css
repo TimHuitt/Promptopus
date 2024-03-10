@@ -24,7 +24,7 @@
   align-items: center;
   position: fixed;
   top: 5px;
-  right: 25px;
+  right: 50%;
   transform: translateX(50%);
   border-radius: 50%;
   border-top: 0 solid transparent;

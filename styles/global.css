@@ -2,9 +2,11 @@
 
 :root {
   --bg: rgb(182, 173, 242);
+  --bg-alpha: rgba(182, 173, 242, 0.66);
   --header-bg: rgb(68, 210, 144);
   --timer-bg: rgba(80, 225, 235, 0.854);
-  --help-bg: rgba(80, 225, 235, 0.981);
+  --help-bg: rgba(161, 231, 255, 0.981);
+  --header-hover: rgb(15, 171, 80);
   --prompt-bg: transparent;
 
   --font: #2f2f2f;
@@ -139,6 +141,13 @@ select {
 .back-container img,
 .refresh-container img {
   max-height: 50px;
+}
+
+.buttons:hover {
+  background: var(--header-hover);
+}
+.buttons:active {
+  background: var(--header-hover);
 }
 
 /* @media (max-height: 700px) {
