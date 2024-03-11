@@ -1,10 +1,10 @@
-import dbConnect from '../../lib/mongodb'
+import mongodb from '../../lib/mongodb'
 import User from '../../models/User'
 
 export default async function handler (req, res) {
   const { method } = req
 
-  await dbConnect()
+  await mongodb()
 
   switch (method) {
     case 'GET':
