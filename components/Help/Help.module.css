@@ -31,6 +31,7 @@
   background: var(--help-bg);
   overflow: hidden;
   transition: .5s all;
+  cursor: pointer;
   z-index: 999;
 }
 .generate-button {

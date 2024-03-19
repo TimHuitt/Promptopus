@@ -79,8 +79,8 @@ const Prompts: React.FC = () => {
         { showPrompts ? (
           <>
             <div className={styles['prompt-card']}>
-              {prompts.map((prompt) => (
-                <Card prompt={ prompt } />
+              {prompts.map((prompt, index) => (
+                <Card key={`prompt-${index}`} prompt={ prompt } />
               ))}
             </div>
           </>

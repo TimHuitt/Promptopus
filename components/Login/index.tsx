@@ -9,9 +9,6 @@ export default function Component() {
       <div className={`${styles.Login} buttons`}>
         <div onClick={() => signOut()}>Sign Out</div>
       </div>
-      <div className={styles.email}>
-        Signed in as {session.user.email}
-      </div>
       </>
     )
   }
