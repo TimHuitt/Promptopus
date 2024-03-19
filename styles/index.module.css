@@ -94,9 +94,9 @@
   top: 50px;
   left: 0;
   height: 25vh;
-  width: 110%;
+  width: 100%;
   background-image: url("/images/home-supplies.png");
-  background-size: contain;
+  background-size: cover;
   background-position: top;
   background-repeat: no-repeat;
   z-index: 1;
