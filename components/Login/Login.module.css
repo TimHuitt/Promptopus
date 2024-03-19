@@ -6,13 +6,3 @@
   padding: 0 5px;
   cursor: pointer;
 }
-.email {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100vw;
-  height: 12px;
-  text-align: right;
-  background-color: var(--bg-alpha);
-  font-size: .75rem;
-}
