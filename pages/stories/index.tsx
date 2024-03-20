@@ -158,7 +158,7 @@ const Stories: React.FC = () => {
       )}
 
       <div>
-        <Image src={globalBG.src} fill={true} alt={''} style={{zIndex: '-1'}}/>
+        <Image src={globalBG.src} fill sizes={'(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'} alt={''} style={{zIndex: '-1'}}/>
       </div>
     </>
   )

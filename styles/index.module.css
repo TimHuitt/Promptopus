@@ -93,10 +93,10 @@
   position: absolute;
   top: 50px;
   left: 0;
-  height: 25vh;
+  height: 30vh;
   width: 100%;
   background-image: url("/images/home-supplies.png");
-  background-size: cover;
+  background-size: contain;
   background-position: top;
   background-repeat: no-repeat;
   z-index: 1;
