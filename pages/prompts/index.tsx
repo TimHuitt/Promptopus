@@ -5,9 +5,11 @@ import Image from 'next/image'
 import Card from '../../components/Card'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
+import Save from '../../components/Save'
+import Window from '../../components/Window'
+
 import styles from './prompts.module.css'
 import Data from '../../public/data/data.json'
-
 import globalBG from '../../public/images/bg.png'
 
 const Prompts: React.FC = () => {
@@ -16,8 +18,17 @@ const Prompts: React.FC = () => {
   const [ promptType, setPromptType ] = useState<boolean>(true)
   const [ count, setCount ] = useState<number>(3)
   const [ showPrompts, setShowPrompts ] = useState<boolean>(false)
+  const [ showSave, setShowSave ] = useState<boolean>(false)
   const [ disabled, setDisabled ] = useState<boolean>(false)
   const [ prompts, setPrompts ] = useState<string[]>([''])
+
+  const handleCancel = () => {
+    setShowSave(false)
+  }
+
+  const handleSave = () => {
+    setShowSave(prev => !prev)
+  }
 
   const handleSubmit = async () => {
     setPrompts(['Loading...'])
@@ -117,7 +128,8 @@ const Prompts: React.FC = () => {
         )}
       </div>
       
-      {showPrompts ? <Timer /> : ''}
+      {showSave && <Window prompts={ prompts } handleCancel={ handleCancel} />}
+      {showPrompts && <Timer />}
       {!showPrompts ? (
         <button className="generate-button" type="button" onClick={ handleSubmit }>Generate Prompts!</button>
       ) : (
@@ -127,6 +139,7 @@ const Prompts: React.FC = () => {
               <Image src='/images/back.svg' height={50} width={50} alt={''} />
             </button>
           </div>
+          {showPrompts && <Save handleSave={handleSave} />}
           <div className="refresh-container">
             <button type="button" onClick={ handleSubmit }>
               <Image src='/images/refresh.svg' height={50} width={50} alt={''} />

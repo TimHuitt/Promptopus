@@ -1,0 +1,21 @@
+
+.Save {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  width: 50px;
+  border-radius: 30%;
+  background-color: rgba(15, 223, 105, 0.587);
+  border: 2px solid rgb(150, 245, 150);
+  cursor: pointer;
+}
+.button img {
+  padding: 10%;
+}
+.button:hover {
+  background-color: rgb(22, 245, 119);
+  border: 2px solid rgb(112, 239, 112);
+}
+
+

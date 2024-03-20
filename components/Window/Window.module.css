@@ -1,0 +1,66 @@
+
+.save {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.save-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 85%;
+  max-width: 400px;
+  padding: 20px;
+  border: 4px solid black;
+  border-radius: 20px;
+  background: var(--bg);
+  overflow: auto;
+  z-index: 2;
+}
+.save-container h1 {
+  margin: 20px 0;
+}
+.prompts {
+  display: flex;
+  margin: 20px 10px 0 10px;
+}
+.prompts h1 {
+  padding: 0 10px;
+}
+.save-container form {
+  display: flex;
+  flex-direction: column;
+  margin-top: 30px;
+}
+
+.save-container form input {
+  padding: 10px;
+  font-size: 1.25rem;
+  border: 2px solid black;
+  border-radius: 10px;
+  margin-bottom: 10px;
+}
+
+.email {
+  padding: 10px 20px;
+  margin: 20px;
+  border: 2px solid black;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cancel {
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.cancel:hover,
+.cancel:active {
+  background-color: rgb(226, 132, 132);
+}
