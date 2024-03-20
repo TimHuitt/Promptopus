@@ -40,8 +40,8 @@ export default function signin({
             <div key={provider.name}>
               <div className={styles.or}>or</div>
               <form>
-                <input type="text" id="email" name="email" placeholder="your@email.com"/>
-                <input type="password" id="password" name="password" placeholder="password"/>
+                <input type="text" id="email" name="email" placeholder="your@email.com" autoComplete="off"/>
+                <input type="password" id="password" name="password" placeholder="password" autoComplete="off"/>
               </form>
               <div className={`${styles.email} buttons`} onClick={() => signIn(provider.id)}>
                 Continue with {provider.name}

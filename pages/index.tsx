@@ -70,7 +70,7 @@ const Home: React.FC = () => {
                       src={promptArm}
                       placeholder="blur"
                       fill
-                      sizes="100%"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       alt={''} 
                       style={{
                         objectPosition: 'bottom',
@@ -85,7 +85,7 @@ const Home: React.FC = () => {
                       src={storyArm}
                       placeholder="blur"
                       fill
-                      sizes="100%"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                       alt={''} 
                       style={{
                         objectPosition: 'bottom',
