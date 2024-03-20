@@ -1,11 +1,11 @@
-import React from 'react'
+import React, { MouseEventHandler } from 'react'
 import { useSession } from "next-auth/react"
 import Image from 'next/image'
 import styles from './Window.module.css'
 
 type Prompts = {
   prompts: string[],
-  handleCancel: Function
+  handleCancel: MouseEventHandler<HTMLDivElement>
 }
 
 const Window: React.FC<Prompts> = ({ prompts, handleCancel }) => {
