@@ -15,8 +15,8 @@ const Save: React.FC<Save> = ({ handleSave }) => {
         <div className={`${styles.Save}`} onClick={handleSave}>
           <Image 
             src='/images/save.svg'
-            height={40}
-            width={40}
+            height={35}
+            width={35}
             alt={''} />
         </div>
 
