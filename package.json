@@ -8,6 +8,7 @@
   "dependencies": {
     "@auth/mongodb-adapter": "^2.5.0",
     "@netlify/plugin-nextjs": "^4.41.3",
+    "bcryptjs": "^2.4.3",
     "dotenv": "^16.4.5",
     "mongodb": "^6.5.0",
     "next": "latest",

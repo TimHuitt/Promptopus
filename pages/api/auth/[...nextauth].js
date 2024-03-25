@@ -5,6 +5,9 @@ import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from '../../../lib/mongodb';
 
 export const options = {
+  session: {
+    strategy: 'jwt', // Force using JWT for session management
+  },
   pages: {
     signIn: '/signin',
   },
