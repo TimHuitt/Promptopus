@@ -6,7 +6,7 @@ import Card from '../../components/Card'
 import Timer from '../../components/Timer'
 import Header from '../../components/Header'
 import Save from '../../components/Save'
-import Window from '../../components/Window'
+import Window from '../../components/LoginWindow'
 
 import styles from './prompts.module.css'
 import Data from '../../public/data/data.json'

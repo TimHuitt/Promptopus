@@ -3,16 +3,16 @@ import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from "next-auth/providers/credentials";
 import { MongoDBAdapter } from "@auth/mongodb-adapter";
 import clientPromise from '../../../lib/mongodb';
+import { has, compare } from 'bcryptjs'
 
 export const options = {
   session: {
-    strategy: 'jwt', // Force using JWT for session management
+    strategy: 'jwt',
   },
   pages: {
     signIn: '/signin',
   },
   debug: true,
-  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -25,25 +25,32 @@ export const options = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
-        // Add logic here to look up the user from the credentials supplied
-        const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
-  
-        if (user) {
-          const client = await clientPromise;
-          const collection = client.db().collection('users')
+        const client = await MongoClient.connect(process.env.MONGO_URI, {
+          useNewUrlParser: true,
+          useUnifiedTopology: true,
+        });
 
-          const records = await collection.find({}).toArray()
-          console.log('REC', records)
+        const collection = client.db().collection('users')
 
-          // Any object returned will be saved in `user` property of the JWT
-          return user
-        } else {
-          // If you return null then an error will be displayed advising the user to check their details.
-          return null
-  
-          // You can also Reject this callback with an Error thus the user will be sent to the error page with the error message as a query parameter
+        const user = await collection.findOne({
+          email: credentials.email
+        })
+
+        if (!user) {
+          client.close()
+          throw new Error('User Not Found')
         }
-      }
+
+        const isValid = await compare(credentials.password, user.password)
+
+        if (!isValid) {
+          client.close()
+          throw new Error('Log In Error')
+        }
+
+        client.close()
+        return { email: user.email }
+        }
     })
   ],
 }

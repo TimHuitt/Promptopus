@@ -1,7 +1,7 @@
 import { useSession, signIn, signOut } from "next-auth/react"
 import styles from './Login.module.css'
 
-export default function Component() {
+export default function Login() {
   const { data: session } = useSession()
   if (session) {
     return (

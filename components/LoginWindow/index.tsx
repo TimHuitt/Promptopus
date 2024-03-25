@@ -8,7 +8,7 @@ type Prompts = {
   handleCancel: MouseEventHandler<HTMLDivElement>
 }
 
-const Window: React.FC<Prompts> = ({ prompts, handleCancel }) => {
+const LoginWindow: React.FC<Prompts> = ({ prompts, handleCancel }) => {
   const { data: session } = useSession()
 
   if (session) {
@@ -43,4 +43,4 @@ const Window: React.FC<Prompts> = ({ prompts, handleCancel }) => {
   )
 }
 
-export default Window
+export default LoginWindow
