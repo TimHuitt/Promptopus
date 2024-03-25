@@ -1,15 +1,15 @@
 import NextAuth from 'next-auth'
 import GoogleProvider from 'next-auth/providers/google';
 import CredentialsProvider from "next-auth/providers/credentials";
+import { MongoDBAdapter } from "@auth/mongodb-adapter";
+import clientPromise from '../../../lib/mongodb';
 
 export const options = {
   pages: {
     signIn: '/signin',
   },
-  theme: {
-    brandColor: '#fcba03',
-    buttonText: '#fff',
-  },
+  debug: true,
+  adapter: MongoDBAdapter(clientPromise),
   providers: [
     GoogleProvider({
       clientId: process.env.GOOGLE_ID,
@@ -22,11 +22,16 @@ export const options = {
         password: { label: "Password", type: "password" }
       },
       async authorize(credentials, req) {
-        console.log(credentials)
         // Add logic here to look up the user from the credentials supplied
         const user = { id: "1", name: "J Smith", email: "jsmith@example.com" }
   
         if (user) {
+          const client = await clientPromise;
+          const collection = client.db().collection('users')
+
+          const records = await collection.find({}).toArray()
+          console.log('REC', records)
+
           // Any object returned will be saved in `user` property of the JWT
           return user
         } else {

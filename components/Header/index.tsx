@@ -7,7 +7,7 @@ import Login from '../../components/Login'
 const Header: React.FC = () => {
   const pathname = usePathname()
   const { data: session } = useSession()
-  
+  console.log(session)
   return (
     <div className={styles.Header}>
       <Link href="/">
